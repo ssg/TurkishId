@@ -13,6 +13,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
+
 using System;
 using System.Globalization;
 
@@ -115,7 +116,7 @@ namespace TurkishId
 
         public override int GetHashCode()
         {
-            return numericValue.GetHashCode(); 
+            return numericValue.GetHashCode();
         }
 
         public override bool Equals(object obj)
