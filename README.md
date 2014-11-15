@@ -1,4 +1,4 @@
-TurkishId
+﻿TurkishId
 =========
 Validator (and a random generator tool) for Turkish Republic's citizen ID numbers. I've decided to give this a shot last 
 night while I was waiting for a download. And Turkish ID numbers were really popular in Turkish social
