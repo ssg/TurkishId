@@ -73,6 +73,7 @@ namespace TurkishIdNumberTest
         private static string[] validNumbers = new string[]
         {
             validTurkishId,
+            "19191919190",
             "76558242278",
             "80476431508",
             "76735508630",

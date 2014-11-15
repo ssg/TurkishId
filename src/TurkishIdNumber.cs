@@ -102,6 +102,10 @@ namespace TurkishId
                 return false;
             }
             result = ((oddSum * 7) - evenSum) % 10;
+            if (result < 0)
+            {
+                result += 10;
+            }
             return firstChecksum == result;
         }
 
