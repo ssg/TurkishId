@@ -115,7 +115,7 @@ namespace TurkishId
 
         public override int GetHashCode()
         {
-            return Value.GetHashCode();
+            return numericValue.GetHashCode(); 
         }
 
         public override bool Equals(object obj)
