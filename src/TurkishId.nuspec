@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TurkishId</id>
+    <version>1.0.0.0</version>
+    <authors>SSG</authors>
+    <owners>SSG</owners>
+    <licenseUrl>https://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <projectUrl>https://github.com/ssg/TurkishId</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Turkish ID Number Validation Library</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>id validation turkish</tags>
+  </metadata>
+</package>

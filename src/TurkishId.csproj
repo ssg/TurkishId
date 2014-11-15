@@ -7,8 +7,8 @@
     <ProjectGuid>{142F3D68-1DFB-42E3-967A-59BD4465A877}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TCKimlik</RootNamespace>
-    <AssemblyName>TCKimlik</AssemblyName>
+    <RootNamespace>TurkishId</RootNamespace>
+    <AssemblyName>TurkishId</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
