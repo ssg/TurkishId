@@ -22,7 +22,7 @@ or if you just want to validate it:
 
 ```csharp
 using TurkishId;
-bool reallyValid = TCKimlikNo.IsValid("12345678901");
+bool reallyValid = TurkishIdNumber.IsValid("12345678901");
 ```
 
 Performance
