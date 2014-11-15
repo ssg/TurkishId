@@ -102,11 +102,7 @@ namespace TurkishId
                 return false;
             }
             result = ((oddSum * 7) - evenSum) % 10;
-            if (firstChecksum != result)
-            {
-                return false;
-            }
-            return true;
+            return firstChecksum == result;
         }
 
         public override string ToString()
