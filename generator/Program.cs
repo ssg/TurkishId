@@ -37,13 +37,12 @@ Usage: TurkishIdGen count");
                 string no = generateRandomId(rnd);
                 Console.WriteLine(no);
             }
-            Console.Read();
         }
 
         private static string generateRandomId(Random rnd)
         {
             int value = rnd.Next(100000000, 1000000000);
-            return generateIdFromValue(123456789);
+            return generateIdFromValue(value);
         }
 
         private static string generateIdFromValue(int x)
