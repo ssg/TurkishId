@@ -44,6 +44,18 @@ namespace TurkishIdNumberTest
         [Test]
         [Parallelizable]
         [Factory("invalidNumbers")]
+        void ctor_InvalidNumericValue_ThrowsArgumentException(string number)
+        {
+            long value;
+            if (long.TryParse(number, out value))
+            {
+                Assert.Throws<ArgumentException>(() => new TurkishIdNumber(long.Parse(number)));
+            }
+        }
+
+        [Test]
+        [Parallelizable]
+        [Factory("invalidNumbers")]
         void ctor_Invalid_ThrowsArgumentException(string number)
         {
             Assert.Throws<ArgumentException>(() => new TurkishIdNumber(number));
@@ -190,5 +202,7 @@ namespace TurkishIdNumberTest
             Assert.AreEqual(validTurkishId, (string)id1);
         }
 
+
+        public object ArgumentExceptionvar { get; set; }
     }
 }
