@@ -46,26 +46,3 @@ and
 and
 
 > d11 = sum(d1..d10) mod 10 
-
-
-
-Performance
-------------
-This is probably one of the fastest implementations on .NET. I didn't grind so much on performance but
-it can easily handle millions of validations per second on my Core i7. 
-
-Algorithm
-----------
-Turkish Republic's ID structure and verification is simple. It's an eleven digit number. 
-If we name each digit as d(n):
-
-> d1 > 0
-
-and
-
-> d10 = (((d1 + d3 + d5 + d7 + d9) * 7) - (d2 + d4 + d6 + d8) mod 10)
-
-and
-
-> d11 = sum(d1..d10) mod 10 
-
