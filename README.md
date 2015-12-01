@@ -35,14 +35,14 @@ it can easily handle millions of validations per second on my Core i7.
 Algorithm
 ----------
 Turkish Republic's ID structure and verification is simple. It's an eleven digit number. 
-If we name each digit as _d(n)_ where leftmost digit is d1 and the rightmost is d11:
+If we name each digit as _d(n)_ where leftmost digit is called _d1_ and the rightmost _d11_:
 
-> d1 > 0
-
-and
-
-> d10 = (((d1 + d3 + d5 + d7 + d9) * 7) - (d2 + d4 + d6 + d8) mod 10)
+> _d1_ > 0
 
 and
 
-> d11 = sum(d1..d10) mod 10 
+> _d10_ = (((_d1_ + _d3_ + _d5_ + _d7_ + _d9_) * 7) - (_d2_ + _d4_ + _d6_ + _d8_) mod 10)
+
+and
+
+> _d11_ = sum(_d1_.._d10_) mod 10 
