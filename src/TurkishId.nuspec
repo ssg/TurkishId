@@ -10,8 +10,8 @@
     <projectUrl>https://github.com/ssg/TurkishId</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Initial release</releaseNotes>
-    <copyright>Copyright 2014</copyright>
+    <releaseNotes>Added TurkishId validation attribute</releaseNotes>
+    <copyright>Copyright 2014-2015 Sedat Kapanoglu</copyright>
     <tags>turkish id verification tc kimlik tckimlik</tags>
   </metadata>
   <files>
