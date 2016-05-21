@@ -15,7 +15,7 @@
 */
 
 using System;
-using System.Globalization;
+using System.Runtime.CompilerServices;
 
 namespace TurkishId
 {
@@ -23,11 +23,7 @@ namespace TurkishId
     {
         public const int Length = 11;
 
-        public const long MinValue = 10000000000;
-        public const long MaxValue = 99999999999;
-
-        private long numericValue;
-        private string textValue;
+        private string value;
 
         public TurkishIdNumber(string number)
         {
@@ -35,78 +31,74 @@ namespace TurkishId
             {
                 throw new ArgumentNullException("number");
             }
-            if (!long.TryParse(number, out numericValue) || !IsValid(numericValue))
-            {
-                throw new ArgumentException("Invalid value", "number");
-            }
-            this.textValue = number;
-        }
-
-        public TurkishIdNumber(long number)
-        {
             if (!IsValid(number))
             {
-                throw new ArgumentException("Invalid value", "number");
+                throw new ArgumentException("Not a valid Turkish ID number", "number");
             }
-            this.numericValue = number;
+            this.value = number;
         }
 
         public string Value
         {
             get
             {
-                if (textValue == null)
+                return value;
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static unsafe int nextDigit(ref char* ptr, ref bool invalid)
+        {
+            int result = *ptr++ - '0';
+            if (result > 9)
+            {
+                invalid = true;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Check if given Turkish ID number is valid
+        /// </summary>
+        public static unsafe bool IsValid(string number)
+        {
+            if (number == null || number.Length != 11)
+            {
+                return false;
+            }
+            fixed (char* inputPtr = number)
+            {
+                bool invalid = false;
+                char* pInput = inputPtr;
+                int oddSum = nextDigit(ref pInput, ref invalid);
+                if (oddSum == 0 || invalid)
                 {
-                    textValue = numericValue.ToString(CultureInfo.InvariantCulture);
+                    return false;
                 }
-                return textValue;
+                int evenSum = 0;
+                for (int i = 0; i < 4; i++)
+                {
+                    evenSum += nextDigit(ref pInput, ref invalid);
+                    oddSum += nextDigit(ref pInput, ref invalid);
+                }
+                int firstChecksum = nextDigit(ref pInput, ref invalid);
+                int finalChecksum = nextDigit(ref pInput, ref invalid);
+                if (invalid)
+                {
+                    return false;
+                }
+                int final = (oddSum + evenSum + firstChecksum) % 10;
+                if (finalChecksum != final)
+                {
+                    return false;
+                }
+                int first = ((oddSum * 7) - evenSum) % 10;
+                if (first < 0)
+                {
+                    first += 10;
+                }
+                return firstChecksum == first;
             }
-        }
-
-        /// <summary>
-        /// Check if given Turkish ID number is valid
-        /// </summary>
-        public static bool IsValid(string number)
-        {
-            long value;
-            return long.TryParse(number, out value)
-                && IsValid(value);
-        }
-
-        /// <summary>
-        /// Check if given Turkish ID number is valid
-        /// </summary>
-        public static bool IsValid(long number)
-        {
-            if (number < MinValue || number > MaxValue)
-            {
-                return false;
-            }
-            int finalChecksum = (int)(number % 10);
-            int firstChecksum = (int)((number / 10) % 10);
-            int x = (int)(number / 100);
-            int d1 = x / 100000000;
-            int d2 = (x / 10000000) % 10;
-            int d3 = (x / 1000000) % 10;
-            int d4 = (x / 100000) % 10;
-            int d5 = (x / 10000) % 10;
-            int d6 = (x / 1000) % 10;
-            int d7 = (x / 100) % 10;
-            int d8 = (x / 10) % 10;
-            int d9 = x % 10;
-            int oddSum = d1 + d3 + d5 + d7 + d9;
-            int evenSum = d2 + d4 + d6 + d8;
-            int result = (oddSum + evenSum + firstChecksum) % 10;
-            if (finalChecksum != result)
-            {
-                return false;
-            }
-            result = ((oddSum * 7) - evenSum) % 10;
-            if (result < 0)
-            {
-                result += 10;
-            }
-            return firstChecksum == result;
         }
 
         public override string ToString()
@@ -116,7 +108,7 @@ namespace TurkishId
 
         public override int GetHashCode()
         {
-            return numericValue.GetHashCode();
+            return value.GetHashCode();
         }
 
         public override bool Equals(object obj)
