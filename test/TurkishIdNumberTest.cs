@@ -21,55 +21,30 @@ using TurkishId;
 namespace TurkishIdNumberTest
 {
     [TestFixture]
-    [Parallelizable]
+    [Parallelizable(ParallelScope.Children)]
     public class TurkishIdNumberTest
     {
         private const string validTurkishId = "14948892948";
 
         [Test]
-        [Parallelizable]
         public void ctor_null_ThrowsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(() => new TurkishIdNumber(null));
         }
 
         [Test]
-        [Parallelizable]
-        public void ctor_NumericValue_ReturnCorrectsValue()
+        public void ctor_Null_ThrowsArgumentNullException()
         {
-            var id = new TurkishIdNumber(long.Parse(validTurkishId));
-            Assert.AreEqual(validTurkishId, id.Value);
+            Assert.Throws<ArgumentNullException>(() => new TurkishIdNumber(null));
         }
 
         [Test]
-        [Parallelizable]
-        [TestCaseSource("invalidNumbers")]
-        public void ctor_InvalidNumericValue_ThrowsArgumentException(string number)
+        public void ctor_InvalidNumber_ThrowsArgumentException()
         {
-            long value;
-            if (long.TryParse(number, out value))
-            {
-                Assert.Throws<ArgumentException>(() => new TurkishIdNumber(long.Parse(number)));
-            }
+            Assert.Throws<ArgumentException>(() => new TurkishIdNumber("123"));
         }
 
         [Test]
-        [Parallelizable]
-        [TestCaseSource("invalidNumbers")]
-        public void ctor_Invalid_ThrowsArgumentException(string number)
-        {
-            if (number == null)
-            {
-                Assert.Throws<ArgumentNullException>(() => new TurkishIdNumber(number));
-            }
-            else
-            {
-                Assert.Throws<ArgumentException>(() => new TurkishIdNumber(number));
-            }
-        }
-
-        [Test]
-        [Parallelizable]
         public void ctor_Valid_SetsValueSuccessfully()
         {
             var result = new TurkishIdNumber(validTurkishId);
@@ -131,7 +106,6 @@ namespace TurkishIdNumberTest
         };
 
         [Test]
-        [Parallelizable]
         [TestCaseSource("validNumbers")]
         public void IsValid_Valid_ReturnsTrue(string number)
         {
@@ -139,7 +113,6 @@ namespace TurkishIdNumberTest
         }
 
         [Test]
-        [Parallelizable]
         [TestCaseSource("invalidNumbers")]
         public void IsValid_Invalid_ReturnsFalse(string number)
         {
@@ -147,27 +120,6 @@ namespace TurkishIdNumberTest
         }
 
         [Test]
-        [Parallelizable]
-        [TestCaseSource("validNumbers")]
-        public void IsValidInt_Valid_ReturnsTrue(string number)
-        {
-            Assert.IsTrue(TurkishIdNumber.IsValid(long.Parse(number)));
-        }
-
-        [Test]
-        [Parallelizable]
-        [TestCaseSource("invalidNumbers")]
-        public void IsValidInt_Invalid_ReturnsFalse(string number)
-        {
-            long value;
-            if (long.TryParse(number, out value))
-            {
-                Assert.IsFalse(TurkishIdNumber.IsValid(value));
-            }
-        }
-
-        [Test]
-        [Parallelizable]
         public void Equals_SameValues_ReturnsTrue()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
@@ -176,7 +128,6 @@ namespace TurkishIdNumberTest
         }
 
         [Test]
-        [Parallelizable]
         public void Equals_DifferentValues_ReturnsFalse()
         {
             var id1 = new TurkishIdNumber(validNumbers[0]);
@@ -185,7 +136,6 @@ namespace TurkishIdNumberTest
         }
 
         [Test]
-        [Parallelizable]
         public void Equals_NullTarget_ReturnsFalse()
         {
             var id1 = new TurkishIdNumber(validNumbers[0]);
@@ -194,7 +144,6 @@ namespace TurkishIdNumberTest
         }
 
         [Test]
-        [Parallelizable]
         public void GetHashCode_SameValue_ReturnsSameHash()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
@@ -203,7 +152,6 @@ namespace TurkishIdNumberTest
         }
 
         [Test]
-        [Parallelizable]
         public void stringOperator_ReturnsValue()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
