@@ -62,7 +62,7 @@ namespace TurkishId
         /// </summary>
         public static unsafe bool IsValid(string number)
         {
-            if (number == null || number.Length != 11)
+            if (number == null || number.Length != Length)
             {
                 return false;
             }
