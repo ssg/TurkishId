@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using MbUnit.Framework;
+using NUnit.Framework;
 using TurkishId;
 
 namespace TurkishIdNumberTest
-{    
+{
     [TestFixture]
     class TurkishIdAttributeTest
     {
@@ -18,12 +15,12 @@ namespace TurkishIdNumberTest
         }
 
         [Test]
-        [Row("1", false)]
-        [Row("19191919190", true)]
-        [Row("19191919191", false)]
-        [Row(19191919190, true)]
-        [Row(19191919191, false)]
-        void TurkishIdAttribute_ReturnsExpectedResult(object value, bool expectedResult)
+        [TestCase("1", false)]
+        [TestCase("19191919190", true)]
+        [TestCase("19191919191", false)]
+        [TestCase(19191919190, true)]
+        [TestCase(19191919191, false)]
+        public void TurkishIdAttribute_ReturnsExpectedResult(object value, bool expectedResult)
         {
             var context = new ValidationContext(value, null, null);
             var results = new List<ValidationResult>();

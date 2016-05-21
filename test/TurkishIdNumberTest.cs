@@ -15,7 +15,7 @@
 */
 
 using System;
-using MbUnit.Framework;
+using NUnit.Framework;
 using TurkishId;
 
 namespace TurkishIdNumberTest
@@ -28,14 +28,14 @@ namespace TurkishIdNumberTest
 
         [Test]
         [Parallelizable]
-        void ctor_null_ThrowsArgumentNullException()
+        public void ctor_null_ThrowsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(() => new TurkishIdNumber(null));
         }
 
         [Test]
         [Parallelizable]
-        void ctor_NumericValue_ReturnCorrectsValue()
+        public void ctor_NumericValue_ReturnCorrectsValue()
         {
             var id = new TurkishIdNumber(long.Parse(validTurkishId));
             Assert.AreEqual(validTurkishId, id.Value);
@@ -43,8 +43,8 @@ namespace TurkishIdNumberTest
 
         [Test]
         [Parallelizable]
-        [Factory("invalidNumbers")]
-        void ctor_InvalidNumericValue_ThrowsArgumentException(string number)
+        [TestCaseSource("invalidNumbers")]
+        public void ctor_InvalidNumericValue_ThrowsArgumentException(string number)
         {
             long value;
             if (long.TryParse(number, out value))
@@ -55,15 +55,22 @@ namespace TurkishIdNumberTest
 
         [Test]
         [Parallelizable]
-        [Factory("invalidNumbers")]
-        void ctor_Invalid_ThrowsArgumentException(string number)
+        [TestCaseSource("invalidNumbers")]
+        public void ctor_Invalid_ThrowsArgumentException(string number)
         {
-            Assert.Throws<ArgumentException>(() => new TurkishIdNumber(number));
+            if (number == null)
+            {
+                Assert.Throws<ArgumentNullException>(() => new TurkishIdNumber(number));
+            }
+            else
+            {
+                Assert.Throws<ArgumentException>(() => new TurkishIdNumber(number));
+            }
         }
 
         [Test]
         [Parallelizable]
-        void ctor_Valid_SetsValueSuccessfully()
+        public void ctor_Valid_SetsValueSuccessfully()
         {
             var result = new TurkishIdNumber(validTurkishId);
             Assert.AreEqual(validTurkishId, result.Value);
@@ -125,32 +132,32 @@ namespace TurkishIdNumberTest
 
         [Test]
         [Parallelizable]
-        [Factory("validNumbers")]
-        void IsValid_Valid_ReturnsTrue(string number)
+        [TestCaseSource("validNumbers")]
+        public void IsValid_Valid_ReturnsTrue(string number)
         {
             Assert.IsTrue(TurkishIdNumber.IsValid(number));
         }
 
         [Test]
         [Parallelizable]
-        [Factory("invalidNumbers")]
-        void IsValid_Invalid_ReturnsFalse(string number)
+        [TestCaseSource("invalidNumbers")]
+        public void IsValid_Invalid_ReturnsFalse(string number)
         {
             Assert.IsFalse(TurkishIdNumber.IsValid(number));
         }
 
         [Test]
         [Parallelizable]
-        [Factory("validNumbers")]
-        void IsValidInt_Valid_ReturnsTrue(string number)
+        [TestCaseSource("validNumbers")]
+        public void IsValidInt_Valid_ReturnsTrue(string number)
         {
             Assert.IsTrue(TurkishIdNumber.IsValid(long.Parse(number)));
         }
 
         [Test]
         [Parallelizable]
-        [Factory("invalidNumbers")]
-        void IsValidInt_Invalid_ReturnsFalse(string number)
+        [TestCaseSource("invalidNumbers")]
+        public void IsValidInt_Invalid_ReturnsFalse(string number)
         {
             long value;
             if (long.TryParse(number, out value))
@@ -161,7 +168,7 @@ namespace TurkishIdNumberTest
 
         [Test]
         [Parallelizable]
-        void Equals_SameValues_ReturnsTrue()
+        public void Equals_SameValues_ReturnsTrue()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
             var id2 = new TurkishIdNumber(validTurkishId);
@@ -170,7 +177,7 @@ namespace TurkishIdNumberTest
 
         [Test]
         [Parallelizable]
-        void Equals_DifferentValues_ReturnsFalse()
+        public void Equals_DifferentValues_ReturnsFalse()
         {
             var id1 = new TurkishIdNumber(validNumbers[0]);
             var id2 = new TurkishIdNumber(validNumbers[1]);
@@ -179,7 +186,7 @@ namespace TurkishIdNumberTest
 
         [Test]
         [Parallelizable]
-        void Equals_NullTarget_ReturnsFalse()
+        public void Equals_NullTarget_ReturnsFalse()
         {
             var id1 = new TurkishIdNumber(validNumbers[0]);
             TurkishIdNumber id2 = null;
@@ -188,7 +195,7 @@ namespace TurkishIdNumberTest
 
         [Test]
         [Parallelizable]
-        void GetHashCode_SameValue_ReturnsSameHash()
+        public void GetHashCode_SameValue_ReturnsSameHash()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
             var id2 = new TurkishIdNumber(validTurkishId);
@@ -197,7 +204,7 @@ namespace TurkishIdNumberTest
 
         [Test]
         [Parallelizable]
-        void stringOperator_ReturnsValue()
+        public void stringOperator_ReturnsValue()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
             Assert.AreEqual(validTurkishId, (string)id1);
