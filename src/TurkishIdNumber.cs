@@ -50,7 +50,7 @@ namespace TurkishId
         private static unsafe int nextDigit(ref char* ptr, ref bool invalid)
         {
             int result = *ptr++ - '0';
-            if (result > 9)
+            if (result < 0 || result > 9)
             {
                 invalid = true;
             }
