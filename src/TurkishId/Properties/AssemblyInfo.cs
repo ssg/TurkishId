@@ -10,4 +10,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright © Sedat Kapanoglu 2014-2016")]
 [assembly: ComVisible(false)]
 [assembly: Guid("fc77467b-3330-4cdd-bd11-75e9fcf3d6a6")]
-[assembly: AssemblyVersion("1.2.*")]
+[assembly: AssemblyVersion("2.0.*")]

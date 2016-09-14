@@ -8,3 +8,5 @@ packages/
 *.nupkg
 *.psess
 *.vspx
+.vs/
+project.lock.json

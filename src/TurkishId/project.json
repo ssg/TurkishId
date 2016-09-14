@@ -1,0 +1,30 @@
+{
+  "name": "TurkishId",
+  "version": "2.0-*",
+  "description": "Turkish ID Number Validation Library",
+  "copyright": "Copyright © Sedat Kapanoglu 2014-2016",
+  "authors": [ "Sedat Kapanoglu" ],
+
+  "dependencies": {
+    "NETStandard.Library": "1.6.0",
+    "System.ComponentModel.Annotations": "4.1.0"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  },
+
+  "packOptions": {
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ssg/TurkishId"
+    },
+    "releaseNotes": "Made .NET Standard compatible",
+    "tags": [ "turkish id", "verification", "tc kimlik", "tckimlik" ],
+    "requireLicenseAcceptance": false
+  },
+
+  "buildOptions": { "allowUnsafe": true, "optimize": true }
+}
