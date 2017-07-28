@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TurkishIdGen": {
+      "commandName": "Project",
+      "commandLineArgs": "10"
+    }
+  }
+}

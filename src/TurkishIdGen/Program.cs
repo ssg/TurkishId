@@ -15,13 +15,12 @@
 */
 
 using System;
-using TurkishId;
 
 namespace TurkishIdGen
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        public static void Main(string[] args)
         {
             if (args.Length == 0)
             {
@@ -42,7 +41,7 @@ Usage: TurkishIdGen count");
 
         private static string generateRandomId(Random rnd)
         {
-            int value = rnd.Next(100000000, 1000000000);
+            int value = rnd.Next(100_000_000, 1_000_000_000);
             return generateIdFromValue(value);
         }
 

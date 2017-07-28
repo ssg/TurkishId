@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Turkish ID Number Validation Library</Description>
+    <Copyright>Copyright � Sedat Kapanoglu 2014-2016</Copyright>
+    <VersionPrefix>2.0</VersionPrefix>
+    <Authors>Sedat Kapanoglu</Authors>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>TurkishId</AssemblyName>
+    <PackageId>TurkishId</PackageId>
+    <PackageTags>turkish id;verification;tc kimlik;tckimlik</PackageTags>
+    <PackageReleaseNotes>Made .NET Standard compatible</PackageReleaseNotes>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/ssg/TurkishId</RepositoryUrl>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.1.0" />
+  </ItemGroup>
+
+</Project>
