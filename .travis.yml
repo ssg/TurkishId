@@ -1,8 +1,9 @@
 language: csharp
 solution: TurkishId.sln
+mono: none
+dotnet: 1.0.3
+dist: trusty
 install:
-  - nuget restore TurkishId.sln
-  - nuget install NUnit.Runners -Version 3.2.0 -OutputDirectory bin
+  - dotnet restore
 script:
-  - xbuild /p:Configuration=Release TurkishId.sln
-  - mono ./bin/NUnit.ConsoleRunner.3.2.0/tools/nunit3-console.exe ./test/bin/Release/TurkishIdNumberTest.dll
+  - dotnet test test/TurkishIdTest/TurkishIdTest.csproj
