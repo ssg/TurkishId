@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>Turkish ID Number Validation Library</Description>
     <Copyright>Copyright � Sedat Kapanoglu 2014-2016</Copyright>
-    <VersionPrefix>2.0</VersionPrefix>
+    <VersionPrefix>2.1.0</VersionPrefix>
     <Authors>Sedat Kapanoglu</Authors>
     <TargetFramework>netstandard1.3</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
