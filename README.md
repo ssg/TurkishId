@@ -1,4 +1,7 @@
-﻿TurkishId
+[![NuGet Version](https://img.shields.io/nuget/v/TurkishId.svg)](https://www.nuget.org/packages/TurkishId/)
+[![Build Status](https://travis-ci.org/ssg/TurkishId.svg?branch=master)](https://travis-ci.org/ssg/TurkishId)
+
+TurkishId
 =========
 Validator (and a random generator tool) for Turkish Republic's citizen ID numbers. I've decided to give this a shot last 
 night while I was waiting for a download. And Turkish ID numbers were really popular in Turkish social
