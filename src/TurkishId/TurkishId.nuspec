@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/ssg/TurkishId</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Removed numeric interface and improved speed</releaseNotes>
+    <releaseNotes>.NET Standard 1.3 support</releaseNotes>
     <copyright>Copyright 2014-2016 Sedat Kapanoglu</copyright>
     <tags>turkish id verification tc kimlik tckimlik</tags>
   </metadata>
