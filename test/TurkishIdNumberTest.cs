@@ -1,55 +1,38 @@
-﻿/*
-     Copyright 2014 Sedat Kapanoglu
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
-*/
-
-using System;
-using NUnit.Framework;
+﻿using System;
+using FluentAssertions;
 using TurkishId;
+using Xunit;
 
 namespace TurkishIdNumberTest
 {
-    [TestFixture]
-    [Parallelizable(ParallelScope.Children)]
     public class TurkishIdNumberTest
     {
         private const string validTurkishId = "14948892948";
 
-        [Test]
+        [Fact]
         public void ctor_null_ThrowsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(() => new TurkishIdNumber(null));
         }
 
-        [Test]
+        [Fact]
         public void ctor_Null_ThrowsArgumentNullException()
         {
             Assert.Throws<ArgumentNullException>(() => new TurkishIdNumber(null));
         }
 
-        [Test]
+        [Fact]
         public void ctor_InvalidNumber_ThrowsArgumentException()
         {
             Assert.Throws<ArgumentException>(() => new TurkishIdNumber("123"));
         }
 
-        [Test]
+        [Fact]
         public void ctor_Valid_SetsValueSuccessfully()
         {
             var result = new TurkishIdNumber(validTurkishId);
-            Assert.AreEqual(validTurkishId, result.Value);
-            Assert.AreEqual(validTurkishId, result.ToString());
+            validTurkishId.Should().Be(result.Value);
+                validTurkishId.Should().Be(result.ToString());
         }
 
         private static string[] validNumbers = new string[]
@@ -105,57 +88,61 @@ namespace TurkishIdNumberTest
             "765582422781 ",
         };
 
-        [Test]
-        [TestCaseSource("validNumbers")]
-        public void IsValid_Valid_ReturnsTrue(string number)
+        [Fact]
+        public void IsValid_Valid_ReturnsTrue()
         {
-            Assert.IsTrue(TurkishIdNumber.IsValid(number));
+            foreach (var validNumber in validNumbers)
+            {
+                TurkishIdNumber.IsValid(validNumber).Should().BeTrue();
+            }
         }
 
-        [Test]
-        [TestCaseSource("invalidNumbers")]
-        public void IsValid_Invalid_ReturnsFalse(string number)
+        [Fact]
+        public void IsValid_Invalid_ReturnsFalse()
         {
-            Assert.IsFalse(TurkishIdNumber.IsValid(number));
+            foreach (var invalidNumber in invalidNumbers)
+            {
+                TurkishIdNumber.IsValid(invalidNumber).Should().BeFalse();
+            }
         }
 
-        [Test]
+        [Fact]
         public void Equals_SameValues_ReturnsTrue()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
             var id2 = new TurkishIdNumber(validTurkishId);
-            Assert.IsTrue(id1.Equals(id2));
+            id1.Should().Be(id2);
         }
 
-        [Test]
+        [Fact]
         public void Equals_DifferentValues_ReturnsFalse()
         {
             var id1 = new TurkishIdNumber(validNumbers[0]);
             var id2 = new TurkishIdNumber(validNumbers[1]);
-            Assert.IsFalse(id1.Equals(id2));
+            id1.Should().NotBe(id2);
         }
 
-        [Test]
+        [Fact]
         public void Equals_NullTarget_ReturnsFalse()
         {
             var id1 = new TurkishIdNumber(validNumbers[0]);
             TurkishIdNumber id2 = null;
-            Assert.IsFalse(id1.Equals(id2));
+            id1.Should().NotBe(id2);
         }
 
-        [Test]
+        [Fact]
         public void GetHashCode_SameValue_ReturnsSameHash()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
             var id2 = new TurkishIdNumber(validTurkishId);
-            Assert.IsTrue(id1.GetHashCode() == id2.GetHashCode());
+            id1.GetHashCode().Should().Be(id2.GetHashCode());
         }
 
-        [Test]
+        [Fact]
         public void stringOperator_ReturnsValue()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
-            Assert.AreEqual(validTurkishId, (string)id1);
+            validTurkishId.Should().Be((string) id1);
         }
 
         public object ArgumentExceptionvar { get; set; }
