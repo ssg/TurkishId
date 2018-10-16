@@ -59,6 +59,10 @@ Usage: TurkishIdGen count");
             int oddSum = d1 + d3 + d5 + d7 + d9;
             int evenSum = d2 + d4 + d6 + d8;
             int firstChecksum = ((oddSum * 7) - evenSum) % 10;
+            if (firstChecksum < 0)
+            {
+                firstChecksum += 10;
+            }
             int secondChecksum = (oddSum + evenSum + firstChecksum) % 10;
             return String.Format("{0}{1}{2}", x, firstChecksum, secondChecksum);
         }
