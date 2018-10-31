@@ -23,7 +23,7 @@ namespace TurkishId
     {
         public const int Length = 11;
 
-        private string value;
+        public string Value { get; }
 
         public TurkishIdNumber(string number)
         {
@@ -35,15 +35,7 @@ namespace TurkishId
             {
                 throw new ArgumentException("Not a valid Turkish ID number", "number");
             }
-            this.value = number;
-        }
-
-        public string Value
-        {
-            get
-            {
-                return value;
-            }
+            this.Value = number;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -108,7 +100,7 @@ namespace TurkishId
 
         public override int GetHashCode()
         {
-            return value.GetHashCode();
+            return Value.GetHashCode();
         }
 
         public override bool Equals(object obj)
@@ -117,8 +109,7 @@ namespace TurkishId
             {
                 return false;
             }
-            var instance = obj as TurkishIdNumber;
-            return instance != null && this.Value == instance.Value;
+            return obj is TurkishIdNumber instance && this.Value == instance.Value;
         }
 
         public static implicit operator string(TurkishIdNumber instance)

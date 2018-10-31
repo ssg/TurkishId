@@ -13,21 +13,22 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-
 using System;
 
 namespace TurkishIdGen
 {
     internal class Program
     {
+        private const string usage =
+            "Generates random and valid Turkish Republic citizen ID Number) <ssg@sourtimes.org>\r\n" +
+            "\r\n" +
+            "Usage: TurkishIdGen count";
+
         public static void Main(string[] args)
         {
             if (args.Length == 0)
             {
-                Console.WriteLine(
-@"Generates random and valid Turkish Republic citizen ID Number) <ssg@sourtimes.org>
-
-Usage: TurkishIdGen count");
+                Console.WriteLine(usage);
                 Environment.Exit(1);
             }
             int count = int.Parse(args[0]);

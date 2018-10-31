@@ -52,7 +52,7 @@ namespace TurkishIdNumberTest
             Assert.AreEqual(validTurkishId, result.ToString());
         }
 
-        private static string[] validNumbers = new string[]
+        private static readonly string[] validNumbers = new string[]
         {
             validTurkishId,
             "19191919190",
@@ -69,7 +69,7 @@ namespace TurkishIdNumberTest
             "64404737702",
         };
 
-        private static string[] invalidNumbers = new string[]
+        private static readonly string[] invalidNumbers = new string[]
         {
             null,
             "04948892948", // first digit zero
