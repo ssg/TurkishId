@@ -48,11 +48,11 @@ namespace TurkishIdGen
 
         private static string generateIdFromValue(int x)
         {
-            int d1 = x / 100000000;
-            int d2 = (x / 10000000) % 10;
-            int d3 = (x / 1000000) % 10;
-            int d4 = (x / 100000) % 10;
-            int d5 = (x / 10000) % 10;
+            int d1 = x / 100_000_000;
+            int d2 = (x / 10_000_000) % 10;
+            int d3 = (x / 1_000_000) % 10;
+            int d4 = (x / 100_000) % 10;
+            int d5 = (x / 10_000) % 10;
             int d6 = (x / 1000) % 10;
             int d7 = (x / 100) % 10;
             int d8 = (x / 10) % 10;

@@ -8,11 +8,7 @@ namespace TurkishId
     {
         public override bool IsValid(object value)
         {
-            if (value == null)
-            {
-                return false;
-            }
-            return TurkishIdNumber.IsValid(value.ToString());
+            return TurkishIdNumber.IsValid(value?.ToString());
         }
     }
 }
