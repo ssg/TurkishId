@@ -29,11 +29,11 @@ namespace TurkishId
         {
             if (number == null)
             {
-                throw new ArgumentNullException("number");
+                throw new ArgumentNullException(nameof(number));
             }
             if (!IsValid(number))
             {
-                throw new ArgumentException("Not a valid Turkish ID number", "number");
+                throw new ArgumentException("Not a valid Turkish ID number", nameof(number));
             }
             this.Value = number;
         }
