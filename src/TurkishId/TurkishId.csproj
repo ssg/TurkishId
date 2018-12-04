@@ -12,7 +12,7 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/ssg/TurkishId</RepositoryUrl>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-    <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0.html</PackageLicenseUrl>
+    <PackageLicense>Apache-2.0</PackageLicense>
     <PackageProjectUrl>https://github.com/ssg/TurkishId</PackageProjectUrl>
     <PackageTags>turkish id verification tc kimlik tckimlik</PackageTags>
     <PackageReleaseNotes><![CDATA[
