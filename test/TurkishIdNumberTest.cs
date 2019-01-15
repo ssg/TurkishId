@@ -27,18 +27,6 @@ namespace TurkishIdNumberTest
         private const string validTurkishId = "14948892948";
 
         [Test]
-        public void ctor_null_ThrowsArgumentNullException()
-        {
-            Assert.Throws<ArgumentNullException>(() => new TurkishIdNumber(null));
-        }
-
-        [Test]
-        public void ctor_Null_ThrowsArgumentNullException()
-        {
-            Assert.Throws<ArgumentNullException>(() => new TurkishIdNumber(null));
-        }
-
-        [Test]
         public void ctor_InvalidNumber_ThrowsArgumentException()
         {
             Assert.Throws<ArgumentException>(() => new TurkishIdNumber("123"));

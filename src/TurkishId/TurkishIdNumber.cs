@@ -27,10 +27,6 @@ namespace TurkishId
 
         public TurkishIdNumber(string number)
         {
-            if (number == null)
-            {
-                throw new ArgumentNullException(nameof(number));
-            }
             if (!IsValid(number))
             {
                 throw new ArgumentException("Not a valid Turkish ID number", nameof(number));
@@ -54,7 +50,7 @@ namespace TurkishId
         /// </summary>
         public static unsafe bool IsValid(string number)
         {
-            if (number == null || number.Length != Length)
+            if (number.Length != Length)
             {
                 return false;
             }
@@ -105,10 +101,6 @@ namespace TurkishId
 
         public override bool Equals(object obj)
         {
-            if (obj == null)
-            {
-                return false;
-            }
             return obj is TurkishIdNumber instance && this.Value == instance.Value;
         }
 

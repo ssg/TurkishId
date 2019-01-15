@@ -8,12 +8,6 @@ namespace TurkishIdNumberTest
     [TestFixture]
     class TurkishIdAttributeTest
     {
-        private class Dummy
-        {
-            [TurkishId]
-            public string Id { get; set; }
-        }
-
         [Test]
         [TestCase("1", false)]
         [TestCase("19191919190", true)]

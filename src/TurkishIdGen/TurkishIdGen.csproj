@@ -6,6 +6,8 @@
     <OutputType>Exe</OutputType>
     <PackageId>TurkishIdGen</PackageId>
     <RuntimeFrameworkVersion>2.1.0</RuntimeFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
+    <NullableReferenceTypes>true</NullableReferenceTypes>
   </PropertyGroup>
 
 </Project>
