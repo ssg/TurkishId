@@ -145,7 +145,5 @@ namespace TurkishIdNumberTest
             var id1 = new TurkishIdNumber(validTurkishId);
             Assert.AreEqual(validTurkishId, (string)id1);
         }
-
-        public object ArgumentExceptionvar { get; set; }
     }
 }
