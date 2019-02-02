@@ -6,6 +6,7 @@
     <PackageId>TurkishIdTest</PackageId>
     <LangVersion>8.0</LangVersion>
     <NullableContextOptions>enable</NullableContextOptions>
+    <CodeAnalysisRuleSet>..\SSG.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

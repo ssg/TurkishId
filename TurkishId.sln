@@ -1,12 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{17A5D651-3BC4-40DE-BFCA-D25075C169F6}"
 	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
 		LICENSE.txt = LICENSE.txt
 		README.md = README.md
+		SSG.ruleset = SSG.ruleset
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishIdTest", "test\TurkishIdTest.csproj", "{E94D17E1-5628-4498-AA24-683661E0F388}"
@@ -36,5 +38,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {958744AE-02D0-4AD8-85A6-A397BA2366B8}
 	EndGlobalSection
 EndGlobal

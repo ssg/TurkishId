@@ -8,6 +8,7 @@
     <RuntimeFrameworkVersion>2.1.0</RuntimeFrameworkVersion>
     <LangVersion>8.0</LangVersion>
     <NullableContextOptions>enable</NullableContextOptions>
+    <CodeAnalysisRuleSet>..\..\SSG.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>

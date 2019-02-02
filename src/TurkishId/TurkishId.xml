@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TurkishId</name>
+    </assembly>
+    <members>
+        <member name="T:TurkishId.TurkishIdAttribute">
+            <summary>
+            Validation attribute for Turkish ID numbers
+            </summary>
+        </member>
+        <member name="M:TurkishId.TurkishIdAttribute.IsValid(System.Object)">
+            <summary>
+            Check if given input is a valid Turkish ID number
+            </summary>
+            <param name="value">Input value</param>
+            <returns>Whether the input is a valid Turkish ID number</returns>
+        </member>
+        <member name="T:TurkishId.TurkishIdNumber">
+            <summary>
+            Represents a valid Turkish ID number
+            </summary>
+        </member>
+        <member name="F:TurkishId.TurkishIdNumber.Length">
+            <summary>
+            Length of a Turkish ID number
+            </summary>
+        </member>
+        <member name="M:TurkishId.TurkishIdNumber.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TurkishId.TurkishIdNumber"/> class.
+            </summary>
+            <param name="number">Turkish ID number</param>
+        </member>
+        <member name="P:TurkishId.TurkishIdNumber.Value">
+            <summary>
+            Gets the value of Turkish ID number
+            </summary>
+        </member>
+        <member name="M:TurkishId.TurkishIdNumber.op_Implicit(TurkishId.TurkishIdNumber)~System.String">
+            <summary>
+            A Turkish ID number can always be converted to a string
+            </summary>
+            <param name="instance">A Turkish ID number instance</param>
+        </member>
+        <member name="M:TurkishId.TurkishIdNumber.IsValid(System.String)">
+            <summary>
+            Check if given Turkish ID number is valid
+            </summary>
+            <param name="number">Input number</param>
+            <returns>Whether the number is a valid Turkish ID number</returns>
+        </member>
+        <member name="M:TurkishId.TurkishIdNumber.ToString">
+            <summary>
+            Get the string representation of the Turkish ID number
+            </summary>
+            <returns>String representation of the Turkish ID number</returns>
+        </member>
+        <member name="M:TurkishId.TurkishIdNumber.GetHashCode">
+            <summary>
+            Get the hash code for this instance
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="M:TurkishId.TurkishIdNumber.Equals(System.Object)">
+            <summary>
+            Check if another object equals to this instance
+            </summary>
+            <param name="obj">Other object to compare with</param>
+            <returns>Whether both objects represent the same Turkish ID number</returns>
+        </member>
+    </members>
+</doc>
