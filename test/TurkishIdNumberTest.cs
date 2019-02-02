@@ -124,14 +124,6 @@ namespace TurkishIdNumberTest
         }
 
         [Test]
-        public void Equals_NullTarget_ReturnsFalse()
-        {
-            var id1 = new TurkishIdNumber(validNumbers[0]);
-            TurkishIdNumber id2 = null;
-            Assert.IsFalse(id1.Equals(id2));
-        }
-
-        [Test]
         public void GetHashCode_SameValue_ReturnsSameHash()
         {
             var id1 = new TurkishIdNumber(validTurkishId);

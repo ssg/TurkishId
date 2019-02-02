@@ -14,6 +14,7 @@
    limitations under the License.
 */
 using System;
+using System.Globalization;
 
 namespace TurkishIdGen
 {
@@ -31,7 +32,7 @@ namespace TurkishIdGen
                 Console.WriteLine(usage);
                 Environment.Exit(1);
             }
-            int count = int.Parse(args[0]);
+            int count = int.Parse(args[0], CultureInfo.InvariantCulture);
             var rnd = new Random();
             for (int n = 0; n < count; n++)
             {
@@ -65,7 +66,7 @@ namespace TurkishIdGen
                 firstChecksum += 10;
             }
             int secondChecksum = (oddSum + evenSum + firstChecksum) % 10;
-            return String.Format("{0}{1}{2}", x, firstChecksum, secondChecksum);
+            return $"{x}{firstChecksum}{secondChecksum}";
         }
     }
 }
