@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>TurkishIdTest</AssemblyName>
     <PackageId>TurkishIdTest</PackageId>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>7.3</LangVersion>
     <NullableReferenceTypes>true</NullableReferenceTypes>
   </PropertyGroup>
 
