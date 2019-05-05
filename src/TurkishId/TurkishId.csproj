@@ -18,7 +18,7 @@
     <PackageReleaseNotes><![CDATA[
 - Remove null checks
     ]]></PackageReleaseNotes>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>7.3</LangVersion>
     <NullableReferenceTypes>true</NullableReferenceTypes>
   </PropertyGroup>
 
