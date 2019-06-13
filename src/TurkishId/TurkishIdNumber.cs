@@ -110,7 +110,7 @@ namespace TurkishId
 
         public static implicit operator string(TurkishIdNumber instance)
         {
-            return instance.Value;
+            return instance?.Value ?? string.Empty;
         }
     }
 }

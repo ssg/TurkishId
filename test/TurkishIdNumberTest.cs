@@ -140,10 +140,17 @@ namespace TurkishIdNumberTest
         }
 
         [Test]
-        public void stringOperator_ReturnsValue()
+        public void stringOperator_ValidValue_ReturnsStringRepresentation()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
             Assert.AreEqual(validTurkishId, (string)id1);
+        }
+
+        [Test]
+        public void stringOperator_Null_ReturnsEmpty()
+        {
+            TurkishIdNumber id1 = null;
+            Assert.AreEqual(string.Empty, (string)id1);
         }
     }
 }
