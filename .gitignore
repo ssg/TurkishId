@@ -11,3 +11,4 @@ packages/
 .vs/
 project.lock.json
 *.userprefs
+TurkishId.xml

@@ -1,4 +1,4 @@
-﻿// <copyright file="TurkishIdAttribute.cs" company="Sedat Kapanoglu">
+﻿// <copyright file="GlobalSuppressions.cs" company="Sedat Kapanoglu">
 //      Copyright 2014 Sedat Kapanoglu
 //
 //    Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,21 +15,4 @@
 //
 // </copyright>
 
-using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace TurkishId
-{
-    /// <summary>
-    /// Validation attribute for Turkish ID numbers.
-    /// </summary>
-    [AttributeUsage(AttributeTargets.Property)]
-    public sealed class TurkishIdAttribute : ValidationAttribute
-    {
-        /// <inheritdoc/>
-        public override bool IsValid(object value)
-        {
-            return TurkishIdNumber.IsValid(value?.ToString());
-        }
-    }
-}
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Globalization", "CA1303:Do not pass literals as localized parameters", Justification = "This was supposed to be disabled", Scope = "member", Target = "~M:TurkishId.TurkishIdNumber.#ctor(System.String)")]
