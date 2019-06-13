@@ -50,6 +50,10 @@ namespace TurkishId
         /// </summary>
         public static unsafe bool IsValid(string number)
         {
+            if (number == null)
+            {
+                return false;
+            }
             if (number.Length != Length)
             {
                 return false;
