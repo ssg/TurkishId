@@ -19,7 +19,7 @@
     <PackageReleaseNotes><![CDATA[
 - Remove null checks
     ]]></PackageReleaseNotes>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
     <Nullable>true</Nullable>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
