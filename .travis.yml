@@ -2,7 +2,6 @@ language: csharp
 solution: TurkishId.sln
 mono: none
 dotnet: 2.1.502
-dist: trusty
 install:
   - dotnet restore
 script:
