@@ -65,12 +65,7 @@ namespace TurkishId
         /// <returns>true if valid, false otherwise.</returns>
         public static unsafe bool IsValid(string number)
         {
-            if (number == null)
-            {
-                return false;
-            }
-
-            if (number.Length != Length)
+            if (number?.Length != Length)
             {
                 return false;
             }

@@ -29,7 +29,12 @@ namespace TurkishId
         /// <inheritdoc/>
         public override bool IsValid(object value)
         {
-            return TurkishIdNumber.IsValid(value?.ToString());
+            if (value is null)
+            {
+                return false;
+            }
+
+            return TurkishIdNumber.IsValid(value.ToString());
         }
     }
 }
