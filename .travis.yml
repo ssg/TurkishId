@@ -1,8 +1,8 @@
 language: csharp
 solution: TurkishId.sln
 mono: none
-dotnet: 2.1.502
+dotnet: 3.0.100
 install:
   - dotnet restore
 script:
-  - dotnet test test/TurkishIdTest.csproj
+  - dotnet test test
