@@ -5,7 +5,7 @@
     <AssemblyName>TurkishIdTest</AssemblyName>
     <PackageId>TurkishIdTest</PackageId>
     <LangVersion>latest</LangVersion>
-    <Nullable>true</Nullable>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

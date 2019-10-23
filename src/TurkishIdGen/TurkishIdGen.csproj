@@ -7,7 +7,7 @@
     <PackageId>TurkishIdGen</PackageId>
     <RuntimeFrameworkVersion>2.1.0</RuntimeFrameworkVersion>
     <LangVersion>latest</LangVersion>
-    <Nullable>true</Nullable>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
