@@ -11,11 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishIdTest", "test\TurkishIdTest.csproj", "{E94D17E1-5628-4498-AA24-683661E0F388}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishIdTest", "test/TurkishIdTest.csproj", "{E94D17E1-5628-4498-AA24-683661E0F388}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishIdGen", "src\TurkishIdGen\TurkishIdGen.csproj", "{88614A10-DB2E-49F8-B8B9-BFA54360909D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishIdGen", "src/TurkishIdGen/TurkishIdGen.csproj", "{88614A10-DB2E-49F8-B8B9-BFA54360909D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishId", "src\TurkishId\TurkishId.csproj", "{E69DD96D-E6A7-4B13-8BD8-855F51934F1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishId", "src/TurkishId/TurkishId.csproj", "{E69DD96D-E6A7-4B13-8BD8-855F51934F1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
