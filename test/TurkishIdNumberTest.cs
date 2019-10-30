@@ -27,13 +27,13 @@ namespace TurkishIdNumberTest
         private const string validTurkishId = "14948892948";
 
         [Test]
-        public void ctor_InvalidNumber_ThrowsArgumentException()
+        public void Ctor_InvalidNumber_ThrowsArgumentException()
         {
             Assert.Throws<ArgumentException>(() => new TurkishIdNumber("123"));
         }
 
         [Test]
-        public void ctor_Valid_SetsValueSuccessfully()
+        public void Ctor_Valid_SetsValueSuccessfully()
         {
             var result = new TurkishIdNumber(validTurkishId);
             Assert.AreEqual(validTurkishId, result.Value);
@@ -57,7 +57,7 @@ namespace TurkishIdNumberTest
             "64404737702",
         };
 
-        private static readonly string[] invalidNumbers = new string[]
+        private static readonly string?[] invalidNumbers = new string?[]
         {
             null,
             "04948892948", // first digit zero
@@ -94,14 +94,14 @@ namespace TurkishIdNumberTest
         };
 
         [Test]
-        [TestCaseSource("validNumbers")]
+        [TestCaseSource(nameof(validNumbers))]
         public void IsValid_Valid_ReturnsTrue(string number)
         {
             Assert.IsTrue(TurkishIdNumber.IsValid(number));
         }
 
         [Test]
-        [TestCaseSource("invalidNumbers")]
+        [TestCaseSource(nameof(invalidNumbers))]
         public void IsValid_Invalid_ReturnsFalse(string number)
         {
             Assert.IsFalse(TurkishIdNumber.IsValid(number));
@@ -124,14 +124,6 @@ namespace TurkishIdNumberTest
         }
 
         [Test]
-        public void Equals_NullTarget_ReturnsFalse()
-        {
-            var id1 = new TurkishIdNumber(validNumbers[0]);
-            TurkishIdNumber id2 = null;
-            Assert.IsFalse(id1.Equals(id2));
-        }
-
-        [Test]
         public void GetHashCode_SameValue_ReturnsSameHash()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
@@ -140,17 +132,10 @@ namespace TurkishIdNumberTest
         }
 
         [Test]
-        public void stringOperator_ValidValue_ReturnsStringRepresentation()
+        public void StringOperator_ValidValue_ReturnsStringRepresentation()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
             Assert.AreEqual(validTurkishId, (string)id1);
-        }
-
-        [Test]
-        public void stringOperator_Null_ReturnsEmpty()
-        {
-            TurkishIdNumber id1 = null;
-            Assert.AreEqual(string.Empty, (string)id1);
         }
     }
 }
