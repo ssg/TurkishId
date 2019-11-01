@@ -44,7 +44,11 @@ If we name each digit as _d(n)_ where leftmost digit is called _d1_ and the righ
 
 and
 
-> _d10_ = ((_d1_ + _d3_ + _d5_ + _d7_ + _d9_) * 7 - (_d2_ + _d4_ + _d6_ + _d8_)) mod 10
+> _n_ = (_d1_ + _d3_ + _d5_ + _d7_ + _d9_) * 7 - (_d2_ + _d4_ + _d6_ + _d8_)
+>
+> if _n_ < 0 then _n_ = _n_ + 10
+>
+> _d10_ = _n_ mod 10
 
 and
 
