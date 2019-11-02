@@ -17,7 +17,6 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.Contracts;
 
 namespace TurkishId
 {
@@ -28,12 +27,17 @@ namespace TurkishId
     public sealed class TurkishIdAttribute : ValidationAttribute
     {
         /// <inheritdoc/>
-        public override bool IsValid(object value)
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             // It's impossible to call this method with a null value
             // because ValidationContext throws ArgumentNullException on null instance values.
-            Contract.Assume(value != null);
-            return TurkishIdNumber.IsValid(value!.ToString());
+            if (value is null)
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
+            return TurkishIdNumber.IsValid(value.ToString()) ? ValidationResult.Success
+                : new ValidationResult(ErrorMessage);
         }
     }
 }

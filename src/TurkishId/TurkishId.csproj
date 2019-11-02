@@ -4,7 +4,7 @@
     <Copyright>Copyright © Sedat Kapanoglu 2014-2018</Copyright>
     <VersionPrefix>3.0</VersionPrefix>
     <Authors>Sedat Kapanoglu</Authors>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard1.1</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AssemblyName>TurkishId</AssemblyName>
     <PackageId>TurkishId</PackageId>
@@ -17,7 +17,7 @@
     <PackageProjectUrl>https://github.com/ssg/TurkishId</PackageProjectUrl>
     <PackageTags>turkish id verification tc kimlik tckimlik</PackageTags>
     <PackageReleaseNotes><![CDATA[
-- Remove null checks
+- Support .NET Standard 1.1+
     ]]></PackageReleaseNotes>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
