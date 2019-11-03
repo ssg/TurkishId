@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Description>Turkish ID Number Validation Library</Description>
     <Copyright>Copyright © Sedat Kapanoglu 2014-2018</Copyright>
-    <VersionPrefix>3.0</VersionPrefix>
+    <Version>2.2.0</Version>
     <Authors>Sedat Kapanoglu</Authors>
     <TargetFramework>netstandard1.1</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -18,6 +18,7 @@
     <PackageTags>turkish id verification tc kimlik tckimlik</PackageTags>
     <PackageReleaseNotes><![CDATA[
 - Support .NET Standard 1.1+
+- Support nullable references
     ]]></PackageReleaseNotes>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
@@ -25,10 +26,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>src/TurkishId/TurkishId.xml</DocumentationFile>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="stylecop.json" />
-    <None Remove="TurkishId.xml" />
-  </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
