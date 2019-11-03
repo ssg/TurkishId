@@ -1,1 +1,1 @@
-dotnet pack src/TurkishId --configuration Release
+dotnet pack src/TurkishId --configuration Release -o .
