@@ -10,14 +10,25 @@ namespace TurkishId.ModelBinderTest
     public class TurkishIdModelBinderProviderTest
     {
         [Test]
-        public void GetBinder_TurkishIdNumber_ReturnsTurkishIdNumberModelBinder()
+        public void GetBinder_ModelTypeIsTurkishIdNumber_ReturnsTurkishIdNumberModelBinder()
         {
             var mock = new Mock<ModelBinderProviderContext>();
-            mock.Setup(c => c.Metadata.ModelType).Returns(typeof(TurkishIdNumber));
+            _ = mock.Setup(c => c.Metadata.ModelType).Returns(typeof(TurkishIdNumber));
 
             var provider = new TurkishIdModelBinderProvider();
             var result = provider.GetBinder(mock.Object);
             Assert.That(result, Is.InstanceOf<TurkishIdModelBinder>());
+        }
+
+        [Test]
+        public void GetBinder_ModelTypeIsSomethingElse_ReturnsNull()
+        {
+            var mock = new Mock<ModelBinderProviderContext>();
+            _ = mock.Setup(c => c.Metadata.ModelType).Returns(typeof(string));
+
+            var provider = new TurkishIdModelBinderProvider();
+            var result = provider.GetBinder(mock.Object);
+            Assert.That(result, Is.Null);
         }
     }
 }
