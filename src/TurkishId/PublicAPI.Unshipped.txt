@@ -1,0 +1,12 @@
+﻿const TurkishId.TurkishIdNumber.Length = 11 -> int
+override TurkishId.TurkishIdNumber.Equals(object? obj) -> bool
+override TurkishId.TurkishIdNumber.GetHashCode() -> int
+override TurkishId.TurkishIdNumber.ToString() -> string!
+static TurkishId.TurkishIdNumber.implicit operator string!(TurkishId.TurkishIdNumber! instance) -> string!
+static TurkishId.TurkishIdNumber.IsValid(string! number) -> bool
+static TurkishId.TurkishIdNumber.TryParse(string! number, out TurkishId.TurkishIdNumber! result) -> bool
+TurkishId.TurkishIdAttribute
+TurkishId.TurkishIdAttribute.TurkishIdAttribute() -> void
+TurkishId.TurkishIdNumber
+TurkishId.TurkishIdNumber.TurkishIdNumber(string! number) -> void
+TurkishId.TurkishIdNumber.Value.get -> string!
