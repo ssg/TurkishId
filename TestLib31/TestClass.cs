@@ -10,7 +10,7 @@ namespace TestLib31
 {
     public class TestClass
     {
-        public void Test()
+        public static void Test()
         {
             _ = new TurkishIdNumber(null); // must fail compilation
         }
