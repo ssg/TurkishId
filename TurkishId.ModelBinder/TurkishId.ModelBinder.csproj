@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <Nullable>enable</Nullable>
+
+        <Description>Turkish ID Number Model Binding Library</Description>
+        <Copyright>Copyright © Sedat Kapanoglu 2020</Copyright>
+        <Version>3.0.0</Version>
+        <Authors>Sedat Kapanoglu</Authors>
+        <TargetFramework>net5.0</TargetFramework>
+        <AssemblyName>TurkishId.ModelBinder</AssemblyName>
+        <PackageId>TurkishId.ModelBinder</PackageId>
+        <PackageTags>turkish id;verification;tc kimlik;tckimlik;model binder</PackageTags>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/ssg/TurkishId</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/ssg/TurkishId</PackageProjectUrl>
+        <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <PackageTags>turkish id verification tc kimlik tckimlik model binding</PackageTags>
+        <PackageReleaseNotes>
+            <![CDATA[
+- Initial release            
+    ]]>
+        </PackageReleaseNotes>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.1">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\src\TurkishId\TurkishId.csproj" />
+    </ItemGroup>
+</Project>

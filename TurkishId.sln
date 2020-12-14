@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishIdGen", "generator\T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishId", "src\TurkishId\TurkishId.csproj", "{E69DD96D-E6A7-4B13-8BD8-855F51934F1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLib31", "TestLib31\TestLib31.csproj", "{F8928292-1C5A-4DBC-963A-A4B94373E65A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLib31", "TestLib31\TestLib31.csproj", "{F8928292-1C5A-4DBC-963A-A4B94373E65A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurkishId.ModelBinder", "TurkishId.ModelBinder\TurkishId.ModelBinder.csproj", "{0B56FC04-9FFB-4159-AB29-BEFB6D2C10A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{F8928292-1C5A-4DBC-963A-A4B94373E65A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8928292-1C5A-4DBC-963A-A4B94373E65A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8928292-1C5A-4DBC-963A-A4B94373E65A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B56FC04-9FFB-4159-AB29-BEFB6D2C10A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B56FC04-9FFB-4159-AB29-BEFB6D2C10A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B56FC04-9FFB-4159-AB29-BEFB6D2C10A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B56FC04-9FFB-4159-AB29-BEFB6D2C10A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
