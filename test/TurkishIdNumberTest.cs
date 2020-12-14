@@ -29,15 +29,15 @@ namespace TurkishIdNumberTest
         [Test]
         public void Ctor_InvalidNumber_ThrowsArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => new TurkishIdNumber("123"));
+            _ = Assert.Throws<ArgumentException>(() => new TurkishIdNumber("123"));
         }
 
         [Test]
         public void Ctor_Valid_SetsValueSuccessfully()
         {
             var result = new TurkishIdNumber(validTurkishId);
-            Assert.AreEqual(validTurkishId, result.Value);
-            Assert.AreEqual(validTurkishId, result.ToString());
+            Assert.That(result.Value, Is.EqualTo(validTurkishId));
+            Assert.That(result.ToString(), Is.EqualTo(validTurkishId));
         }
 
         private static readonly string[] validNumbers = new string[]
@@ -97,14 +97,14 @@ namespace TurkishIdNumberTest
         [TestCaseSource(nameof(validNumbers))]
         public void IsValid_Valid_ReturnsTrue(string number)
         {
-            Assert.IsTrue(TurkishIdNumber.IsValid(number));
+            Assert.That(TurkishIdNumber.IsValid(number), Is.True);
         }
 
         [Test]
         [TestCaseSource(nameof(invalidNumbers))]
         public void IsValid_Invalid_ReturnsFalse(string number)
         {
-            Assert.IsFalse(TurkishIdNumber.IsValid(number));
+            Assert.That(TurkishIdNumber.IsValid(number), Is.False);
         }
 
         [Test]
@@ -112,7 +112,7 @@ namespace TurkishIdNumberTest
         {
             var id1 = new TurkishIdNumber(validTurkishId);
             var id2 = new TurkishIdNumber(validTurkishId);
-            Assert.IsTrue(id1.Equals(id2));
+            Assert.That(id1, Is.EqualTo(id2));
         }
 
         [Test]
@@ -120,7 +120,7 @@ namespace TurkishIdNumberTest
         {
             var id1 = new TurkishIdNumber(validNumbers[0]);
             var id2 = new TurkishIdNumber(validNumbers[1]);
-            Assert.IsFalse(id1.Equals(id2));
+            Assert.That(id1, Is.Not.EqualTo(id2));
         }
 
         [Test]
@@ -128,14 +128,14 @@ namespace TurkishIdNumberTest
         {
             var id1 = new TurkishIdNumber(validTurkishId);
             var id2 = new TurkishIdNumber(validTurkishId);
-            Assert.IsTrue(id1.GetHashCode() == id2.GetHashCode());
+            Assert.That(id1.GetHashCode(), Is.EqualTo(id2.GetHashCode()));
         }
 
         [Test]
         public void StringOperator_ValidValue_ReturnsStringRepresentation()
         {
             var id1 = new TurkishIdNumber(validTurkishId);
-            Assert.AreEqual(validTurkishId, (string)id1);
+            Assert.That((string)id1, Is.EqualTo(validTurkishId));
         }
     }
 }

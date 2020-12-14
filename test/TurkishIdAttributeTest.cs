@@ -19,7 +19,7 @@ namespace TurkishIdNumberTest
             var context = new ValidationContext(value, null, null);
             var results = new List<ValidationResult>();
             bool isValid = Validator.TryValidateValue(value, context, results, new[] { new TurkishIdAttribute() });
-            Assert.AreEqual(expectedResult, isValid);
+            Assert.That(isValid, Is.EqualTo(expectedResult));
         }
     }
 }
