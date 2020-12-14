@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../src/TurkishId/TurkishId.csproj" />
+    <ProjectReference Include="..\..\src\TurkishId\TurkishId.csproj" />
   </ItemGroup>
 
 </Project>

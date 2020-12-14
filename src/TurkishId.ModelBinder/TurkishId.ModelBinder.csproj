@@ -14,7 +14,6 @@
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/ssg/TurkishId</RepositoryUrl>
         <PackageProjectUrl>https://github.com/ssg/TurkishId</PackageProjectUrl>
-        <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <PackageTags>turkish id verification tc kimlik tckimlik model binding</PackageTags>
         <PackageReleaseNotes>
@@ -34,6 +33,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\src\TurkishId\TurkishId.csproj" />
+      <ProjectReference Include="..\TurkishId\TurkishId.csproj" />
     </ItemGroup>
 </Project>
