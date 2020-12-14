@@ -17,6 +17,7 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TurkishId
 {
@@ -27,17 +28,20 @@ namespace TurkishId
     public sealed class TurkishIdAttribute : ValidationAttribute
     {
         /// <inheritdoc/>
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        // It's impossible to call this method with a null value
+        // because ValidationContext throws ArgumentNullException on null instance values.
+        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
-            // It's impossible to call this method with a null value
-            // because ValidationContext throws ArgumentNullException on null instance values.
-            if (value is null)
+#pragma warning disable CS8604 // Possible null reference argument. -- false positive
+#pragma warning disable IDE0046 // Convert to conditional expression -- prefer clarity
+            if (value is null || !TurkishIdNumber.IsValid(value.ToString()))
             {
-                throw new ArgumentNullException(nameof(value));
+                return new ValidationResult(ErrorMessage);
             }
 
-            return TurkishIdNumber.IsValid(value.ToString()) ? ValidationResult.Success
-                : new ValidationResult(ErrorMessage);
+            return ValidationResult.Success;
+#pragma warning restore IDE0046 // Convert to conditional expression
+#pragma warning restore CS8604 // Possible null reference argument.
         }
     }
 }
