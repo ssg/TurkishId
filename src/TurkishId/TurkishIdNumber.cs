@@ -16,6 +16,7 @@
 // </copyright>
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace TurkishId
@@ -45,6 +46,21 @@ namespace TurkishId
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="TurkishIdNumber"/> class using a validated number.
+        /// </summary>
+        /// <param name="number">Input text.</param>
+        /// <param name="alreadyValidated">Must be true.</param>
+        private TurkishIdNumber(string number, bool alreadyValidated)
+        {
+            if (!alreadyValidated)
+            {
+                throw new ArgumentException("Value must be already validated", nameof(alreadyValidated));
+            }
+
+            Value = number;
+        }
+
+        /// <summary>
         /// Gets the value of ID number.
         /// </summary>
         public string Value { get; }
@@ -56,6 +72,26 @@ namespace TurkishId
         public static implicit operator string(TurkishIdNumber instance)
         {
             return instance?.Value ?? string.Empty;
+        }
+
+        /// <summary>
+        /// Try parsing a TurkishIdNumber.
+        /// </summary>
+        /// <param name="number">String to parse.</param>
+        /// <param name="result">Parsed result if return value is true, otherwise null.</param>
+        /// <returns>True if parsing is successful, otherwise false.</returns>
+        public static bool TryParse(
+            string number,
+            [MaybeNullWhen(returnValue: false)] out TurkishIdNumber result)
+        {
+            if (!IsValid(number))
+            {
+                result = null;
+                return false;
+            }
+
+            result = new TurkishIdNumber(number, alreadyValidated: true);
+            return true;
         }
 
         /// <summary>
@@ -123,16 +159,16 @@ namespace TurkishId
         }
 
         /// <inheritdoc/>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            return obj is TurkishIdNumber instance && this.Value == instance.Value;
+            return obj is TurkishIdNumber other && Value == other.Value;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static unsafe int nextDigit(ref char* ptr, ref bool invalid)
         {
             int result = *ptr++ - '0';
-            if (result < 0 || result > 9)
+            if (result is < 0 or > 9)
             {
                 invalid = true;
             }
