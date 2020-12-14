@@ -28,7 +28,43 @@ using TurkishId;
 bool reallyValid = TurkishIdNumber.IsValid("12345678901");
 ```
 
-NuGet package is here: https://www.nuget.org/packages/TurkishId/
+NuGet package is here: <https://www.nuget.org/packages/TurkishId/>
+
+TurkishId.ModelBinder
+---------------------
+There is also a model binder package that you can install at <https://www.nuget.org/packages/TurkishId.ModelBinder>.
+It's a plug'n'play model binder which lets you to use TurkishIdNumber class directly in your model declarations.
+
+It's not part of the original package because you may not want to have whole MVC as a dependency.
+
+To set it up in an ASP.NET Core project, use this syntax in your `ConfigureServices` method in your
+`Startup` class:
+
+```csharp
+services.AddMvc(options =>
+{
+  options.ModelBinderProviders.Insert(0, new TurkishIdModelBinderProvider());
+});
+```
+
+and you're done. If you'd like to use it in your Razor Pages app use `AddMvcOptions` instead:
+
+```csharp
+services.AddRazorPages()
+  .AddMvcOptions(options => options.ModelBinderProviders.Insert(0, new TurkishIdModelBinderProvider()));
+```
+
+or, alternatively, if you only use controllers you can add it to your `AddControllers` options:
+
+```csharp
+services.AddMvc(options =>
+{
+  options.ModelBinderProviders.Insert(0, new TurkishIdModelBinderProvider());
+});
+```
+
+The model binder package doesn't use localization yet, as I didn't figure out how I can support it. The
+validation error message will be in English. Feel free to chime in for a potential solution.
 
 Performance
 ------------
