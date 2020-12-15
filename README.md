@@ -63,8 +63,8 @@ services.AddMvc(options =>
 });
 ```
 
-The model binder package doesn't use localization yet, as I didn't figure out how I can support it. The
-validation error message will be in English. Feel free to chime in for a potential solution.
+The model binder package will use ASP.NET Core's model binding message providers. You can now localize them
+like how you do any other model binder.
 
 Performance
 ------------
