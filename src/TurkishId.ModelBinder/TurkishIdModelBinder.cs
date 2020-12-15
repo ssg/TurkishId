@@ -14,6 +14,7 @@
 //    limitations under the License.
 // </copyright>
 
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
@@ -34,13 +35,24 @@ namespace TurkishId.ModelBinder
                 return Task.CompletedTask;
             }
 
-            if (!TurkishIdNumber.TryParse(result.FirstValue, out var value))
+            string text = result.FirstValue;
+
+            if (String.IsNullOrWhiteSpace(text))
             {
-                bindingContext.ModelState.AddModelError(modelName, "Invalid value");
+                bindingContext.Result = ModelBindingResult.Success(null);
                 return Task.CompletedTask;
             }
 
-            bindingContext.Result = ModelBindingResult.Success(value);
+            if (!TurkishIdNumber.TryParse(text, out var id))
+            {
+                _ = bindingContext.ModelState.TryAddModelError(
+                        modelName,
+                        bindingContext.ModelMetadata.ModelBindingMessageProvider
+                            .ValueIsInvalidAccessor(result.ToString()));
+                return Task.CompletedTask;
+            }
+
+            bindingContext.Result = ModelBindingResult.Success(id);
             return Task.CompletedTask;
         }
     }

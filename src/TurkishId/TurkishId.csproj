@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Description>Turkish ID Number Validation Library</Description>
     <Copyright>Copyright © Sedat Kapanoglu 2014-2020</Copyright>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <Authors>Sedat Kapanoglu</Authors>
     <TargetFramework>net5.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -16,12 +16,8 @@
     <PackageTags>turkish id verification tc kimlik tckimlik</PackageTags>
     <PackageReleaseNotes>
         <![CDATA[
-# New features
-- ModelBinder for ASP.NET Core
-- TurkishIdNumber.TryParse() method
-
-# Breaking changes
-- This release only supports .NET 5.0+
+There are no changes in this package in this version but I'd like to keep
+versions in sync to avoid multiple repositories/branches for releases.
     ]]></PackageReleaseNotes>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>

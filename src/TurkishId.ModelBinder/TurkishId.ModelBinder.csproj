@@ -5,7 +5,7 @@
 
         <Description>Turkish ID Number Model Binding Library</Description>
         <Copyright>Copyright © Sedat Kapanoglu 2020</Copyright>
-        <Version>3.0.0</Version>
+        <Version>3.0.1</Version>
         <Authors>Sedat Kapanoglu</Authors>
         <TargetFramework>net5.0</TargetFramework>
         <AssemblyName>TurkishId.ModelBinder</AssemblyName>
@@ -18,7 +18,8 @@
         <PackageTags>turkish id verification tc kimlik tckimlik model binding</PackageTags>
         <PackageReleaseNotes>
             <![CDATA[
-- Initial release            
+# Improvements
+- Use localized messages for model binding
     ]]>
         </PackageReleaseNotes>
         <Nullable>enable</Nullable>
