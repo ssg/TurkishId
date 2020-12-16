@@ -12,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishIdGen", "generator\TurkishIdGen.csproj", "{88614A10-DB2E-49F8-B8B9-BFA54360909D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishId", "src\TurkishId\TurkishId.csproj", "{E69DD96D-E6A7-4B13-8BD8-855F51934F1F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishId.ModelBinder", "src\TurkishId.ModelBinder\TurkishId.ModelBinder.csproj", "{AA07530F-1C0E-4273-B860-011CB2CDC6DB}"
@@ -26,16 +24,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B3404438-FC3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A2ABBAB3-49CD-432C-A3C6-B9B8B70B8FD3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishIdGen", "src\TurkishIdGen\TurkishIdGen.csproj", "{B4E42729-E122-4A04-B6A2-D80B3211DD56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{88614A10-DB2E-49F8-B8B9-BFA54360909D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88614A10-DB2E-49F8-B8B9-BFA54360909D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88614A10-DB2E-49F8-B8B9-BFA54360909D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88614A10-DB2E-49F8-B8B9-BFA54360909D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E69DD96D-E6A7-4B13-8BD8-855F51934F1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E69DD96D-E6A7-4B13-8BD8-855F51934F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E69DD96D-E6A7-4B13-8BD8-855F51934F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -52,6 +48,10 @@ Global
 		{0084F68C-C02B-409A-BF49-F46FBFF28FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0084F68C-C02B-409A-BF49-F46FBFF28FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0084F68C-C02B-409A-BF49-F46FBFF28FD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4E42729-E122-4A04-B6A2-D80B3211DD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4E42729-E122-4A04-B6A2-D80B3211DD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4E42729-E122-4A04-B6A2-D80B3211DD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4E42729-E122-4A04-B6A2-D80B3211DD56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,7 +59,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E69DD96D-E6A7-4B13-8BD8-855F51934F1F} = {B3404438-FC35-429C-81D7-1B8764F40B38}
 		{AA07530F-1C0E-4273-B860-011CB2CDC6DB} = {B3404438-FC35-429C-81D7-1B8764F40B38}
+		{B1FFC747-0021-43FE-A902-36EAB6AD948A} = {A2ABBAB3-49CD-432C-A3C6-B9B8B70B8FD3}
 		{0084F68C-C02B-409A-BF49-F46FBFF28FD7} = {A2ABBAB3-49CD-432C-A3C6-B9B8B70B8FD3}
+		{B4E42729-E122-4A04-B6A2-D80B3211DD56} = {B3404438-FC35-429C-81D7-1B8764F40B38}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC75FBFF-327F-43D4-8EC6-F28892A8A275}
