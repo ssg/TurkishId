@@ -1,1 +1,7 @@
 ﻿#nullable enable
+TurkishId.ModelBinder.TurkishIdModelBinder
+TurkishId.ModelBinder.TurkishIdModelBinder.BindModelAsync(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext! bindingContext) -> System.Threading.Tasks.Task!
+TurkishId.ModelBinder.TurkishIdModelBinder.TurkishIdModelBinder() -> void
+TurkishId.ModelBinder.TurkishIdModelBinderProvider
+TurkishId.ModelBinder.TurkishIdModelBinderProvider.GetBinder(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderProviderContext! context) -> Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinder?
+TurkishId.ModelBinder.TurkishIdModelBinderProvider.TurkishIdModelBinderProvider() -> void
