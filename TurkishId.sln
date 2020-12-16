@@ -16,13 +16,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishIdGen", "generator\T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishId", "src\TurkishId\TurkishId.csproj", "{E69DD96D-E6A7-4B13-8BD8-855F51934F1F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLib31", "TestLib31\TestLib31.csproj", "{F8928292-1C5A-4DBC-963A-A4B94373E65A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishId.ModelBinder", "src\TurkishId.ModelBinder\TurkishId.ModelBinder.csproj", "{AA07530F-1C0E-4273-B860-011CB2CDC6DB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishId.ModelBinderTest", "test\TurkishId.ModelBinderTest\TurkishId.ModelBinderTest.csproj", "{B1FFC747-0021-43FE-A902-36EAB6AD948A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkishIdTest", "test\TurkishIdTest\TurkishIdTest.csproj", "{0084F68C-C02B-409A-BF49-F46FBFF28FD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B3404438-FC35-429C-81D7-1B8764F40B38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A2ABBAB3-49CD-432C-A3C6-B9B8B70B8FD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +40,6 @@ Global
 		{E69DD96D-E6A7-4B13-8BD8-855F51934F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E69DD96D-E6A7-4B13-8BD8-855F51934F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E69DD96D-E6A7-4B13-8BD8-855F51934F1F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F8928292-1C5A-4DBC-963A-A4B94373E65A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8928292-1C5A-4DBC-963A-A4B94373E65A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8928292-1C5A-4DBC-963A-A4B94373E65A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8928292-1C5A-4DBC-963A-A4B94373E65A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AA07530F-1C0E-4273-B860-011CB2CDC6DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AA07530F-1C0E-4273-B860-011CB2CDC6DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA07530F-1C0E-4273-B860-011CB2CDC6DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +55,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E69DD96D-E6A7-4B13-8BD8-855F51934F1F} = {B3404438-FC35-429C-81D7-1B8764F40B38}
+		{AA07530F-1C0E-4273-B860-011CB2CDC6DB} = {B3404438-FC35-429C-81D7-1B8764F40B38}
+		{0084F68C-C02B-409A-BF49-F46FBFF28FD7} = {A2ABBAB3-49CD-432C-A3C6-B9B8B70B8FD3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC75FBFF-327F-43D4-8EC6-F28892A8A275}
