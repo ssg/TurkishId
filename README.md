@@ -74,7 +74,7 @@ it can easily handle millions of validations per second on my Core i7.
 Algorithm
 ----------
 Turkish Republic's ID structure and verification is simple. It's an eleven digit number. 
-If we name each digit as _d(n)_ where leftmost digit is called _d1_ and the rightmost _d11_:
+If we name each digit as _d(n)_ where leftmost digit is called _d1_ and the rightmost _d11_, a given ID is valid if:
 
 > _d1_ > 0
 
