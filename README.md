@@ -37,7 +37,7 @@ It's a plug'n'play model binder which lets you to use TurkishIdNumber class dire
 
 It's not part of the original package because you may not want to have whole MVC as a dependency.
 
-To set it up in an ASP.NET Core project, use this syntax in your `ConfigureServices` method in your
+To set it up in an ASP.NET Core project, use this syntax in your `ConfigureServices()` method in your
 `Startup` class:
 
 ```csharp
@@ -57,7 +57,7 @@ services.AddRazorPages()
 or, alternatively, if you only use controllers you can add it to your `AddControllers` options:
 
 ```csharp
-services.AddMvc(options =>
+services.AddControllers(options =>
 {
   options.ModelBinderProviders.Insert(0, new TurkishIdModelBinderProvider());
 });
