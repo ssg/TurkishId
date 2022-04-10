@@ -1,1 +1,1 @@
-﻿
+﻿static TurkishId.TurkishIdNumber.IsValid(System.ReadOnlySpan<char> number) -> bool

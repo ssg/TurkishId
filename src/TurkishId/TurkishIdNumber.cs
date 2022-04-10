@@ -44,11 +44,6 @@ namespace TurkishId
             this.Value = number;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TurkishIdNumber"/> class using a validated number.
-        /// </summary>
-        /// <param name="number">Input text.</param>
-        /// <param name="alreadyValidated">Must be true.</param>
         private TurkishIdNumber(string number, bool alreadyValidated)
         {
             if (!alreadyValidated)
@@ -98,51 +93,57 @@ namespace TurkishId
         /// </summary>
         /// <param name="number">Input text.</param>
         /// <returns>true if valid, false otherwise.</returns>
-        public static unsafe bool IsValid(string number)
+        public static bool IsValid(string number)
         {
-            if (number?.Length != Length)
+            return IsValid(number.AsSpan());
+        }
+
+        /// <summary>
+        /// Check if given Turkish ID number is valid.
+        /// </summary>
+        /// <param name="number">Input text.</param>
+        /// <returns>true if valid, false otherwise.</returns>
+        public static bool IsValid(ReadOnlySpan<char> number)
+        {
+            if (number.Length != Length)
             {
                 return false;
             }
 
-            fixed (char* inputPtr = number)
+            bool invalid = false;
+            int oddSum = digit(number[0], ref invalid);
+            if (invalid)
             {
-                bool invalid = false;
-                char* pInput = inputPtr;
-                int oddSum = nextDigit(ref pInput, ref invalid);
-                if (oddSum == 0 || invalid)
-                {
-                    return false;
-                }
-
-                int evenSum = 0;
-                for (int i = 0; i < 4; i++)
-                {
-                    evenSum += nextDigit(ref pInput, ref invalid);
-                    oddSum += nextDigit(ref pInput, ref invalid);
-                }
-
-                int firstChecksum = nextDigit(ref pInput, ref invalid);
-                int finalChecksum = nextDigit(ref pInput, ref invalid);
-                if (invalid)
-                {
-                    return false;
-                }
-
-                int final = (oddSum + evenSum + firstChecksum) % 10;
-                if (finalChecksum != final)
-                {
-                    return false;
-                }
-
-                int first = ((oddSum * 7) - evenSum) % 10;
-                if (first < 0)
-                {
-                    first += 10;
-                }
-
-                return firstChecksum == first;
+                return false;
             }
+
+            int evenSum = 0;
+            for (int i = 1; i < 9; i += 2)
+            {
+                evenSum += digit(number[i], ref invalid);
+                oddSum += digit(number[i + 1], ref invalid);
+            }
+
+            int firstChecksum = digit(number[9], ref invalid);
+            int finalChecksum = digit(number[10], ref invalid);
+            if (invalid)
+            {
+                return false;
+            }
+
+            int computedFinal = (oddSum + evenSum + firstChecksum) % 10;
+            if (finalChecksum != computedFinal)
+            {
+                return false;
+            }
+
+            int first = ((oddSum * 7) - evenSum) % 10;
+            if (first < 0)
+            {
+                first += 10;
+            }
+
+            return firstChecksum == first;
         }
 
         /// <inheritdoc/>
@@ -164,12 +165,13 @@ namespace TurkishId
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static unsafe int nextDigit(ref char* ptr, ref bool invalid)
+        private static int digit(char c, ref bool invalid)
         {
-            int result = *ptr++ - '0';
+            int result = c - '0';
             if (result is < 0 or > 9)
             {
-                invalid = true;
+                invalid |= true;
+                return -1;
             }
 
             return result;
