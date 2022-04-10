@@ -31,7 +31,6 @@ namespace TurkishId
         // because ValidationContext throws ArgumentNullException on null instance values.
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
-#pragma warning disable CS8604 // Possible null reference argument. -- false positive
 #pragma warning disable IDE0046 // Convert to conditional expression -- prefer clarity
             if (value is null || !TurkishIdNumber.IsValid(value.ToString()))
             {
@@ -40,7 +39,6 @@ namespace TurkishId
 
             return ValidationResult.Success;
 #pragma warning restore IDE0046 // Convert to conditional expression
-#pragma warning restore CS8604 // Possible null reference argument.
         }
     }
 }
