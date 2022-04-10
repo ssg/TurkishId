@@ -2,10 +2,10 @@
     <PropertyGroup>
         <Description>Turkish ID Number Validation Library</Description>
         <Copyright>Copyright © Sedat Kapanoglu 2014-2020</Copyright>
-        <Version>3.0.1</Version>
+        <Version>3.1.0</Version>
         <Authors>Sedat Kapanoglu</Authors>
-        <TargetFramework>net5.0</TargetFramework>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
         <AssemblyName>TurkishId</AssemblyName>
         <PackageId>TurkishId</PackageId>
         <PackageTags>turkish id;verification;tc kimlik;tckimlik</PackageTags>
@@ -16,8 +16,13 @@
         <PackageTags>turkish id verification tc kimlik tckimlik</PackageTags>
         <PackageReleaseNotes>
             <![CDATA[
-There are no changes in this package in this version but I'd like to keep
-versions in sync to avoid multiple repositories/branches for releases.
+# New features
+- Add ReadOnlyChar<span> variant to IsValid()
+- Target `netstandard2.1` instead of `net5.0` to broaden support.
+
+# Improvements
+- Remove unsafe code.
+- Upgrade dependencies
     ]]>
         </PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
@@ -27,15 +32,20 @@ versions in sync to avoid multiple repositories/branches for releases.
         <DocumentationFile>src/TurkishId/TurkishId.xml</DocumentationFile>
     </PropertyGroup>
     <ItemGroup>
+      <Compile Remove="Properties\**" />
+      <EmbeddedResource Remove="Properties\**" />
+      <None Remove="Properties\**" />
+    </ItemGroup>
+    <ItemGroup>
         <AdditionalFiles Include="stylecop.json" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.1">
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.2">
+        <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.3">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
@@ -44,9 +54,5 @@ versions in sync to avoid multiple repositories/branches for releases.
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <Folder Include="Properties" />
     </ItemGroup>
 </Project>

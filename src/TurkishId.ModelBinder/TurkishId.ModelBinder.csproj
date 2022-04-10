@@ -5,9 +5,9 @@
 
         <Description>Turkish ID Number Model Binding Library</Description>
         <Copyright>Copyright © Sedat Kapanoglu 2020</Copyright>
-        <Version>3.0.1</Version>
+        <Version>3.1.0</Version>
         <Authors>Sedat Kapanoglu</Authors>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>netstandard2.1</TargetFramework>
         <AssemblyName>TurkishId.ModelBinder</AssemblyName>
         <PackageId>TurkishId.ModelBinder</PackageId>
         <PackageTags>turkish id;verification;tc kimlik;tckimlik;model binder</PackageTags>
@@ -18,8 +18,8 @@
         <PackageTags>turkish id verification tc kimlik tckimlik model binding</PackageTags>
         <PackageReleaseNotes>
             <![CDATA[
-# Improvements
-- Use localized messages for model binding
+# Changes
+- Depend on TurkishId 3.1.0 (.NET Standard 2.1 version)
     ]]>
         </PackageReleaseNotes>
         <Nullable>enable</Nullable>
@@ -33,11 +33,11 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
-        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.1">
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.2">
+        <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.3">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
