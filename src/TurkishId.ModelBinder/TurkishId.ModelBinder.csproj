@@ -19,7 +19,7 @@
         <PackageReleaseNotes>
             <![CDATA[
 # Changes
-- Depend on TurkishId 3.1.0 (.NET Standard 2.1 version)
+- Target .NET 6.0
     ]]>
         </PackageReleaseNotes>
         <Nullable>enable</Nullable>
