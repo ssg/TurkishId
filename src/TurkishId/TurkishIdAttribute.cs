@@ -1,5 +1,5 @@
 ﻿// <copyright file="TurkishIdAttribute.cs" company="Sedat Kapanoglu">
-//      Copyright 2014-2020 Sedat Kapanoglu
+//      Copyright 2014-2022 Sedat Kapanoglu
 //
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
 
 namespace TurkishId
 {
