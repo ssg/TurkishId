@@ -1,4 +1,5 @@
 [![NuGet Version](https://img.shields.io/nuget/v/TurkishId.svg)](https://www.nuget.org/packages/TurkishId/)
+![Build status](https://github.com/ssg/TurkishId/actions/workflows/build.yml/badge.svg)
 
 TurkishId
 =========
