@@ -101,6 +101,36 @@ namespace TurkishIdNumberTest
         }
 
         [Test]
+        [TestCaseSource(nameof(validNumbers))]
+        public void TryParse_Valid_ReturnsTrueAndCorrectResult(string number)
+        {
+            Assert.That(TurkishIdNumber.TryParse(number, out var result), Is.True);
+            Assert.That(result!.ToString(), Is.EqualTo(number));
+        }
+
+        [Test]
+        [TestCaseSource(nameof(invalidNumbers))]
+        public void TryParse_Invalid_ReturnsFalseAndNull(string number)
+        {
+            Assert.That(TurkishIdNumber.TryParse(number, out var result), Is.False);
+            Assert.That(result, Is.Null);
+        }
+
+        [Test]
+        [TestCaseSource(nameof(validNumbers))]
+        public void TryParseNullable_Valid_ReturnsTrueAndCorrectResult(string number)
+        {
+            Assert.That(TurkishIdNumber.TryParse(number)?.ToString(), Is.EqualTo(number));
+        }
+
+        [Test]
+        [TestCaseSource(nameof(invalidNumbers))]
+        public void TryParseNullable_Invalid_ReturnsNull(string number)
+        {
+            Assert.That(TurkishIdNumber.TryParse(number), Is.Null);
+        }
+
+        [Test]
         [TestCaseSource(nameof(invalidNumbers))]
         public void IsValid_Invalid_ReturnsFalse(string number)
         {

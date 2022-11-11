@@ -1,5 +1,5 @@
 ﻿// <copyright file="TurkishIdNumber.cs" company="Sedat Kapanoglu">
-//      Copyright 2014-2020 Sedat Kapanoglu
+//      Copyright 2014-2022 Sedat Kapanoglu
 //
 //    Licensed under the Apache License, Version 2.0 (the "License");
 //    you may not use this file except in compliance with the License.
@@ -86,6 +86,16 @@ namespace TurkishId
 
             result = new TurkishIdNumber(number, alreadyValidated: true);
             return true;
+        }
+
+        /// <summary>
+        /// Try parsing a TurkishIdNumber.
+        /// </summary>
+        /// <param name="number">String to parse.</param>
+        /// <returns>Parsed result if return value is true, otherwise null.</returns>
+        public static TurkishIdNumber? TryParse(string number)
+        {
+            return IsValid(number) ? new TurkishIdNumber(number, alreadyValidated: true) : null;
         }
 
         /// <summary>
