@@ -1,8 +1,0 @@
-language: csharp
-solution: TurkishId.sln
-mono: none
-dotnet: 5.0.100
-install:
-  - dotnet restore
-script:
-  - dotnet test 
