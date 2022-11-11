@@ -55,6 +55,7 @@ namespace TurkishIdNumberTest
             "93212606504",
             "35201408508",
             "64404737702",
+            "10000000146",
         };
 
         private static readonly string?[] invalidNumbers = new string?[]
