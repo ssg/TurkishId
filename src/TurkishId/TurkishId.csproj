@@ -2,7 +2,7 @@
     <PropertyGroup>
         <Description>Turkish ID Number Validation Library</Description>
         <Copyright>Copyright © Sedat Kapanoglu 2014-2020</Copyright>
-        <Version>3.1.0</Version>
+        <Version>3.2.0</Version>
         <Authors>Sedat Kapanoglu</Authors>
         <TargetFramework>netstandard2.1</TargetFramework>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -17,12 +17,11 @@
         <PackageReleaseNotes>
             <![CDATA[
 # New features
-- Add ReadOnlyChar<span> variant to IsValid()
-- Target `netstandard2.1` instead of `net5.0` to broaden support.
+- `TryParse` alternative with a nullable return value instead of out parameter.
 
 # Improvements
-- Remove unsafe code.
-- Upgrade dependencies
+- The package is built using .NET 6.0 now.
+- Upgraded dependencies.
     ]]>
         </PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
@@ -41,10 +40,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
         <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.3">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

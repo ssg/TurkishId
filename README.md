@@ -1,9 +1,8 @@
 [![NuGet Version](https://img.shields.io/nuget/v/TurkishId.svg)](https://www.nuget.org/packages/TurkishId/)
-[![Build Status](https://travis-ci.org/ssg/TurkishId.svg?branch=master)](https://travis-ci.org/ssg/TurkishId)
 
 TurkishId
 =========
-Validator (and a random generator tool) for Turkish Republic's citizen ID numbers. I've decided to give this a shot last 
+Validator, model binder and generator tool for Turkish Republic's citizen ID numbers. I've decided to give this a shot last 
 night while I was waiting for a download. And Turkish ID numbers were really popular in Turkish social
 media last week. The Id number is called "T.C. Kimlik No" (Turkish Republic Identity Number). I decided to 
 use English translation to allow easier handling in international projects.
@@ -26,6 +25,26 @@ or if you just want to validate it:
 ```csharp
 using TurkishId;
 bool reallyValid = TurkishIdNumber.IsValid("12345678901");
+```
+
+You can also use the classic `TryParse`:
+
+```csharp
+using TurkishId;
+if (TurkishIdNumber.TryParse(value, out var id))
+{
+    // ...
+}
+```
+
+or with a nullable return value which can be used with pattern matching:
+
+```csharp
+using TurkishId;
+if (TurkishIdNumber.TryParse(value) is TurkishIdNumber id))
+{
+    // ...
+}
 ```
 
 NuGet package is here: <https://www.nuget.org/packages/TurkishId/>
@@ -54,7 +73,7 @@ services.AddRazorPages()
   .AddMvcOptions(options => options.ModelBinderProviders.Insert(0, new TurkishIdModelBinderProvider()));
 ```
 
-or, alternatively, if you only use controllers you can add it to your `AddControllers` options:
+or, alternatively, if you only use controllers, you can add it to your `AddControllers` options:
 
 ```csharp
 services.AddControllers(options =>
