@@ -40,8 +40,8 @@ namespace TurkishIdNumberTest
             Assert.That(result.ToString(), Is.EqualTo(validTurkishId));
         }
 
-        private static readonly string[] validNumbers = new string[]
-        {
+        private static readonly string[] validNumbers =
+        [
             validTurkishId,
             "19191919190",
             "76558242278",
@@ -56,10 +56,10 @@ namespace TurkishIdNumberTest
             "35201408508",
             "64404737702",
             "10000000146",
-        };
+        ];
 
-        private static readonly string?[] invalidNumbers = new string?[]
-        {
+        private static readonly string?[] invalidNumbers =
+        [
             null,
             "04948892948", // first digit zero
             "14948892946", // last digit invalid
@@ -92,7 +92,7 @@ namespace TurkishIdNumberTest
             // spaces
             " 765582422781",
             "765582422781 ",
-        };
+        ];
 
         [Test]
         [TestCaseSource(nameof(validNumbers))]
