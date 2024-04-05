@@ -4,7 +4,7 @@
         <Copyright>Copyright © Sedat Kapanoglu 2014-2020</Copyright>
         <Version>3.2.0</Version>
         <Authors>Sedat Kapanoglu</Authors>
-        <TargetFramework>netstandard2.1</TargetFramework>
+        <TargetFrameworks>netstandard2.1;net5.0</TargetFrameworks>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
         <AssemblyName>TurkishId</AssemblyName>
         <PackageId>TurkishId</PackageId>
@@ -48,6 +48,8 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
         <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     </ItemGroup>
 </Project>
