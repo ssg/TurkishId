@@ -1,10 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <AssemblyName>TurkishIdGen</AssemblyName>
-    <OutputType>Exe</OutputType>
-    <PackageId>TurkishIdGen</PackageId>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <AssemblyName>TurkishIdGen</AssemblyName>
+        <OutputType>Exe</OutputType>
+        <PackageId>TurkishIdGen</PackageId>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <Version>3.3.0</Version>
+    </PropertyGroup>
 </Project>

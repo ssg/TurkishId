@@ -3,7 +3,7 @@
         <TargetFramework>netstandard2.1</TargetFramework>
         <Description>Turkish ID Number Validation Library</Description>
         <Copyright>Copyright © Sedat Kapanoglu 2014-2020</Copyright>
-        <Version>3.2.0</Version>
+        <Version>3.3.0</Version>
         <Authors>Sedat Kapanoglu</Authors>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
         <AssemblyName>TurkishId</AssemblyName>
