@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
         <Description>Turkish ID Number Validation Library</Description>
         <Copyright>Copyright © Sedat Kapanoglu 2014-2020</Copyright>
         <Version>3.2.0</Version>
         <Authors>Sedat Kapanoglu</Authors>
-        <TargetFramework>netstandard2.1</TargetFramework>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
         <AssemblyName>TurkishId</AssemblyName>
         <PackageId>TurkishId</PackageId>
