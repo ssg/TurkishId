@@ -18,7 +18,7 @@ namespace TurkishIdNumberTest
         {
             var context = new ValidationContext(value, null, null);
             var results = new List<ValidationResult>();
-            bool isValid = Validator.TryValidateValue(value, context, results, new[] { new TurkishIdAttribute() });
+            bool isValid = Validator.TryValidateValue(value, context, results, [new TurkishIdAttribute()]);
             Assert.That(isValid, Is.EqualTo(expectedResult));
         }
     }
