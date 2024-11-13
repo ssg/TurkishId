@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.get_version.outputs.VERSION }}
     steps:
@@ -43,7 +43,7 @@ jobs:
 
   publish_nuget:
     needs: build
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Download package artifact
         uses: actions/download-artifact@v3
@@ -60,7 +60,7 @@ jobs:
 
   publish_github:
     needs: build
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Download package artifact
         uses: actions/download-artifact@v3
