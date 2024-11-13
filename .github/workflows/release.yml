@@ -1,9 +1,14 @@
 name: Publish NuGet Packages
 
 on:
-  release:
-    types: [published]
-
+    release:
+      types: [published]
+    workflow_dispatch:
+      inputs:
+        version:
+          description: 'Package version'
+          required: false
+   
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,14 +23,18 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Extract version from tag
+      - name: Extract version
         id: get_version
         shell: bash
         run: |
-          VERSION=${GITHUB_REF#refs/tags/}
+          if [ -n "${{ github.event.inputs.version }}" ]; then
+            VERSION="${{ github.event.inputs.version }}"
+          else
+            VERSION=${GITHUB_REF#refs/tags/}
+          fi
           echo "Version is $VERSION"
-          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT    
-
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+   
       - name: Restore dependencies
         run: dotnet restore
 
