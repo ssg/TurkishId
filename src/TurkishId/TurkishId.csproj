@@ -14,14 +14,11 @@
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/ssg/TurkishId</PackageProjectUrl>
         <PackageTags>turkish id verification tc kimlik tckimlik</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageReleaseNotes>
             <![CDATA[
-# New features
-- `TryParse` alternative with a nullable return value instead of out parameter.
-
-# Improvements
-- The package is built using .NET 6.0 now.
-- Upgraded dependencies.
+# Breaking changes
+- Target .NET 8.0
     ]]>
         </PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
@@ -30,6 +27,11 @@
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
         <DocumentationFile>src/TurkishId/TurkishId.xml</DocumentationFile>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+    
     <ItemGroup>
       <Compile Remove="Properties\**" />
       <EmbeddedResource Remove="Properties\**" />

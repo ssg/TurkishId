@@ -16,14 +16,20 @@
         <PackageProjectUrl>https://github.com/ssg/TurkishId</PackageProjectUrl>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <PackageTags>turkish id verification tc kimlik tckimlik model binding</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageReleaseNotes>
             <![CDATA[
 # Changes
-- Target .NET 6.0
+- Target .NET 8.0
     ]]>
         </PackageReleaseNotes>
         <Nullable>enable</Nullable>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
     <ItemGroup>
         <None Remove="stylecop.json" />
     </ItemGroup>
