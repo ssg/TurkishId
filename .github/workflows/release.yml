@@ -65,7 +65,7 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Publish to NuGet.org
-        run: dotnet nuget push ./*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push ./*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} 
 
   publish_github:
     needs: build
