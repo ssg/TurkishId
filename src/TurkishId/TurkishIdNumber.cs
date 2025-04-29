@@ -44,7 +44,7 @@ namespace TurkishId
             this.Value = number;
         }
 
-        private TurkishIdNumber(string number, bool alreadyValidated)
+        TurkishIdNumber(string number, bool alreadyValidated)
         {
             if (!alreadyValidated)
             {
@@ -175,7 +175,7 @@ namespace TurkishId
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static int digit(char c, ref bool invalid)
+        static int digit(char c, ref bool invalid)
         {
             int result = c - '0';
             if (result is < 0 or > 9)

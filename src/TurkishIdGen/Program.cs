@@ -17,9 +17,9 @@ using System;
 
 namespace TurkishIdGen
 {
-    internal class Program
+    class Program
     {
-        private const string usage =
+        const string usage =
             "Generates random and valid Turkish Republic citizen ID Number) <ssg@sourtimes.org>\r\n" +
             "\r\n" +
             "Usage: TurkishIdGen count";
@@ -40,13 +40,13 @@ namespace TurkishIdGen
             }
         }
 
-        private static string generateRandomId(Random rnd)
+        static string generateRandomId(Random rnd)
         {
             int value = rnd.Next(100_000_000, 1_000_000_000);
             return generateIdFromValue(value);
         }
 
-        private static string generateIdFromValue(int x)
+        static string generateIdFromValue(int x)
         {
             int d1 = x / 100_000_000;
             int d2 = x / 10_000_000 % 10;

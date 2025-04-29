@@ -24,7 +24,7 @@ namespace TurkishIdNumberTest
     [Parallelizable(ParallelScope.Children)]
     public class TurkishIdNumberTest
     {
-        private const string validTurkishId = "14948892948";
+        const string validTurkishId = "14948892948";
 
         [Test]
         public void Ctor_InvalidNumber_ThrowsArgumentException()
@@ -40,7 +40,7 @@ namespace TurkishIdNumberTest
             Assert.That(result.ToString(), Is.EqualTo(validTurkishId));
         }
 
-        private static readonly string[] validNumbers =
+        static readonly string[] validNumbers =
         [
             validTurkishId,
             "19191919190",
@@ -58,7 +58,7 @@ namespace TurkishIdNumberTest
             "10000000146",
         ];
 
-        private static readonly string?[] invalidNumbers =
+        static readonly string?[] invalidNumbers =
         [
             null,
             "04948892948", // first digit zero
