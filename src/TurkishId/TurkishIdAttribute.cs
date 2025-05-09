@@ -31,10 +31,12 @@ namespace TurkishId
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
 #pragma warning disable IDE0046 // Convert to conditional expression -- prefer clarity
+#pragma warning disable CS8604 // Possible null reference argument. -- false detection (there is just a value is null check there!)
             if (value is null || !TurkishIdNumber.IsValid(value.ToString()))
             {
                 return new ValidationResult(ErrorMessage);
             }
+#pragma warning restore CS8604 // Possible null reference argument.
 
             return ValidationResult.Success;
 #pragma warning restore IDE0046 // Convert to conditional expression

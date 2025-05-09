@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <Description>Turkish ID Number Validation Library</Description>
         <Copyright>Copyright © Sedat Kapanoglu 2014-2020</Copyright>
-        <Version>3.3.0</Version>
+        <Version>4.0.0</Version>
         <Authors>Sedat Kapanoglu</Authors>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
         <AssemblyName>TurkishId</AssemblyName>
@@ -23,6 +23,7 @@
         </PackageReleaseNotes>
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
+        <NoWarn>IDE0079</NoWarn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
         <DocumentationFile>src/TurkishId/TurkishId.xml</DocumentationFile>

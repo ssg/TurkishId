@@ -1,2 +1,1 @@
-﻿static TurkishId.TurkishIdNumber.IsValid(System.ReadOnlySpan<char> number) -> bool
-static TurkishId.TurkishIdNumber.TryParse(string! number) -> TurkishId.TurkishIdNumber?
+﻿
