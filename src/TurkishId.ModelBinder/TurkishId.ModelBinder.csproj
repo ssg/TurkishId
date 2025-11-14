@@ -1,11 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
-        <Nullable>enable</Nullable>
-
         <Description>Turkish ID Number Model Binding Library</Description>
         <Copyright>Copyright © Sedat Kapanoglu 2020</Copyright>
-        <Version>4.0.0</Version>
         <Authors>Sedat Kapanoglu</Authors>
         <AssemblyName>TurkishId.ModelBinder</AssemblyName>
         <PackageId>TurkishId.ModelBinder</PackageId>
@@ -18,11 +15,10 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageReleaseNotes>
             <![CDATA[
-# Changes
-- Target .NET 8.0
+# New features
+- New targets: .NET 9.0 + .NET 10.0
     ]]>
         </PackageReleaseNotes>
-        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>

@@ -1,0 +1,13 @@
+<Project>
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <Version>4.1.0</Version>
+        <PackageReleaseNotes>
+            <![CDATA[
+# New features
+- New targets: .NET 9.0 + .NET 10.0
+    ]]>
+        </PackageReleaseNotes>
+    </PropertyGroup>
+</Project>

@@ -3,7 +3,6 @@
         <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
         <Description>Turkish ID Number Validation Library</Description>
         <Copyright>Copyright © Sedat Kapanoglu 2014-2020</Copyright>
-        <Version>4.0.0</Version>
         <Authors>Sedat Kapanoglu</Authors>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
         <AssemblyName>TurkishId</AssemblyName>
@@ -15,14 +14,6 @@
         <PackageProjectUrl>https://github.com/ssg/TurkishId</PackageProjectUrl>
         <PackageTags>turkish id verification tc kimlik tckimlik</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageReleaseNotes>
-            <![CDATA[
-# Breaking changes
-- Target .NET 8.0
-    ]]>
-        </PackageReleaseNotes>
-        <LangVersion>latest</LangVersion>
-        <Nullable>enable</Nullable>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
         <DocumentationFile>src/TurkishId/TurkishId.xml</DocumentationFile>
