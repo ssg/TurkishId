@@ -25,8 +25,8 @@ jobs:
 
     - name: Publish to NuGet
       if: startsWith(github.ref, 'refs/tags/')
-      run: dotnet nuget push ./nupkg/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+      run: dotnet nuget push ./nupkg/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
 
     - name: Publish to GitHub Packages
       if: startsWith(github.ref, 'refs/tags/')
-      run: dotnet nuget push ./nupkg/*.nupkg -k ${{ secrets.GPM_TOKEN }} -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
+      run: dotnet nuget push ./nupkg/*.nupkg -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json -k ${{ secrets.GPM_TOKEN }} 
