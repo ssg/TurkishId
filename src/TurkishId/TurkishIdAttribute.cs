@@ -26,20 +26,11 @@ namespace TurkishId
     public sealed class TurkishIdAttribute : ValidationAttribute
     {
         /// <inheritdoc/>
-        // It's impossible to call this method with a null value
-        // because ValidationContext throws ArgumentNullException on null instance values.
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
-#pragma warning disable IDE0046 // Convert to conditional expression -- prefer clarity
-#pragma warning disable CS8604 // Possible null reference argument. -- false detection (there is just a value is null check there!)
-            if (value is null || !TurkishIdNumber.IsValid(value.ToString()))
-            {
-                return new ValidationResult(ErrorMessage);
-            }
-#pragma warning restore CS8604 // Possible null reference argument.
-
-            return ValidationResult.Success;
-#pragma warning restore IDE0046 // Convert to conditional expression
+            return value is string text && TurkishIdNumber.IsValid(text)
+                ? ValidationResult.Success
+                : new ValidationResult(ErrorMessage);
         }
     }
 }
