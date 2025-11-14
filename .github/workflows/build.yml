@@ -1,3 +1,5 @@
+# DO NOT RENAME THIS FILE
+
 name: Build, Test, and Deploy
 
 on: [push]
@@ -25,7 +27,7 @@ jobs:
 
     - name: Publish to NuGet
       if: startsWith(github.ref, 'refs/tags/')
-      run: dotnet nuget push ./nupkg/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
+      run: dotnet nuget push ./nupkg/*.nupkg -s https://api.nuget.org/v3/index.json 
 
     - name: Publish to GitHub Packages
       if: startsWith(github.ref, 'refs/tags/')
