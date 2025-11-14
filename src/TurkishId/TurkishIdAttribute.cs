@@ -28,7 +28,7 @@ namespace TurkishId
         /// <inheritdoc/>
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
-            return value is string text && TurkishIdNumber.IsValid(text)
+            return value is object newValue && TurkishIdNumber.IsValid(newValue.ToString()!)
                 ? ValidationResult.Success
                 : new ValidationResult(ErrorMessage);
         }
